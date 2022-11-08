@@ -1,30 +1,29 @@
-/* container */
-.container{
-    padding: 5px;
+body{
+    margin: 0px;
 }
+/* блоки как строка */
+main{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px; /* отступ от верха */
+}
+main div{
+    width: 10%;
+    text-align: center;
+    border: 1px solid green;
+    padding: 5px 10px;
+}/* ссылки как блоки */
 a{
     display: block;
+    text-decoration: none;
     width: 100%;
     height: 100%;
-    text-decoration: none;
     color: green;
     padding: 5px;
 }
-ul{
-    text-align: center;
-    display: flex;
-    justify-content: center;  /*выравнивание по центру*/
-}
-li{
-    border: 2px solid green;
-    cursor: pointer;
-    list-style: none;
-    width: 200px;
-    height: 50px;
-}
-li:hover{
+main div:hover{
     background-color: green;
 }
-li:hover a{
+main div:hover a{
     color: white;
 }
