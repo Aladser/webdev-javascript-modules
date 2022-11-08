@@ -137,11 +137,11 @@ function printNumberAsString(number){
 // кнопки меню
 let pages = document.querySelectorAll('header div');
 pages[0].addEventListener('click', function(){
-    window.open("../M7_Calculator.html", "_self");
+    window.open("../M7_Calculator/index.html", "_self");
 });
 pages[1].addEventListener('click', function(){
     window.open("../index.html", "_self");
 });
 pages[2].addEventListener('click', function(){
-    window.open("../M6_ShapeInterseption/index.html", "_self");
+    window.open("../M6_TrafficLight/index.html", "_self");
 })

@@ -34,7 +34,7 @@ for(i=0; i<trafficLight.length; i++){
 // кнопки меню
 let pages = document.querySelectorAll('header div');
 pages[0].addEventListener('click', function(){
-    window.open("../M6_ShapeInterseption/index.html", "_self");
+    window.open("../M8_GuessNumber/index.html", "_self");
 });
 pages[1].addEventListener('click', function(){
     window.open("../index.html", "_self");

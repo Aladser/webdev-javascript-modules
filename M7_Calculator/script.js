@@ -103,7 +103,7 @@ document.querySelector('#btn_equals').addEventListener('click', function () {
 // кнопки меню
 let pages = document.querySelectorAll('header div');
 pages[0].addEventListener('click', function(){
-    window.open("../M6_TrafficLight.html", "_self");
+    window.open("../M6_TrafficLight/index.html", "_self");
 });
 pages[1].addEventListener('click', function(){
     window.open("../index.html", "_self");
