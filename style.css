@@ -13,6 +13,12 @@ main div{
     border: 1px solid green;
     padding: 5px 10px;
 }
+main div:hover{
+    background-color: green;
+}
+main div:hover a{
+    color: white;
+}
 /* ссылки как блоки */
 a{
     display: block;
@@ -21,10 +27,4 @@ a{
     height: 100%;
     color: green;
     padding: 5px;
-}
-main div:hover{
-    background-color: green;
-}
-main div:hover a{
-    color: white;
 }
