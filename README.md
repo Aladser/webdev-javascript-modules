@@ -1,1 +1,1 @@
-[сайт модулей](https://aladser.github.io/SkillFactory_WEBDEV_Modules/)
+[Сайт модулей](https://aladser.github.io/SkillFactory_WEBDEV_Modules/)
