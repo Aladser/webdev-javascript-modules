@@ -51,14 +51,13 @@ function select_operation(event){
             if( !isNaN(inputWindow.value) ){
                 first_number = parseInt( inputWindow.value );
                 inputWindow.value += this.textContent;
-                position = inputWindow.value.length;
             }
             // число + операция + число
             else{
                 first_number = calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
                 inputWindow.value =  first_number + this.textContent;
-                position = inputWindow.value.length;
             }
+            position = inputWindow.value.length;
         }
         // введен знак - смена знака
         else
@@ -73,27 +72,26 @@ for(let i=0; i<calc_buttons.length; i++){
 } 
 // -------квадратный корень-------
 document.querySelector('#btn_sqrt').addEventListener('click', function () {
-    let last_number = inputWindow.value[inputWindow.value.length-1];
-    // игнорирование пустой строки, последним знака арифм.операции
-    if(inputWindow.value!='' && !isNaN(last_number)){
-        // число
-        if(!isNaN(inputWindow.value))
-            inputWindow.value = Math.sqrt(inputWindow.value);
-            // √ на будущее
-        // число + операция + число
-        else{
-            let second_number = parseInt(inputWindow.value.slice(position))
-            let val = calc(operation, first_number, second_number);
-            inputWindow.value =  Math.sqrt(val).toFixed(3);
-        }
+    let last_sign = inputWindow.value[inputWindow.value.length-1];
+    // игнорирование пустой строки
+    if( inputWindow.value!='' ){
+        // последний знак - число
+        let rslt;
+        if(!isNaN(last_sign))
+            // _число_ или _число-операция-число_
+            rslt = !isNaN(inputWindow.value) ? inputWindow.value : calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
+        // последний знак - арифм.операция
+        else
+            rslt = inputWindow.value.slice(0, inputWindow.value.length-1);
+        inputWindow.value = Math.sqrt(rslt).toFixed(3);
         operation = null;
     }
 })
 // -------равно------- 
 document.querySelector('#btn_equals').addEventListener('click', function () {
     // игнорирование пустого поля, арифм.знака
-    let last_number = inputWindow.value[inputWindow.value.length-1];
-    if (operation!='input' && operation!=null && !isNaN(last_number)){
+    let last_sign = inputWindow.value[inputWindow.value.length-1];
+    if (operation!='input' && operation!=null && !isNaN(last_sign)){
         inputWindow.value =  calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
         operation = null;
     }
