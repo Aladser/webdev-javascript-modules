@@ -40,36 +40,34 @@ function calc(oprt, first_number, second_number){
             return first_number / second_number; 
     }
 }
-// ввод вычисления +-*/
+// ввод + или - или / или *
 function select_operation(event){
     // игнор пустого поля 
     if (inputWindow.value != ''){
-        let last_number = inputWindow.value[inputWindow.value.length-1];
+        let last_sign = inputWindow.value[inputWindow.value.length-1]; // последний знак
         // введено число
-        if( !isNaN(last_number) ){
+        if( !isNaN(last_sign) ){
             // число
             if( !isNaN(inputWindow.value) ){
                 first_number = parseInt( inputWindow.value );
                 inputWindow.value += this.textContent;
-                operation = this.textContent;
                 position = inputWindow.value.length;
             }
             // число + операция + число
             else{
                 first_number = calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
                 inputWindow.value =  first_number + this.textContent;
-                operation = this.textContent;
                 position = inputWindow.value.length;
             }
         }
         // введен знак - смена знака
         else
-            inputWindow.value = inputWindow.value.slice(0, inputWindow.value.length-1) + oprt;
+            inputWindow.value = inputWindow.value.slice(0, inputWindow.value.length-1) +this.textContent;
+        operation = this.textContent;          
     }
 }
-// кнопки вычислений
+// кнопки + - * /
 let calc_buttons = document.querySelectorAll('.btn-oprt');
-// назначение событий вычислений
 for(let i=0; i<calc_buttons.length; i++){
     calc_buttons[i].addEventListener('click', select_operation);
 } 
