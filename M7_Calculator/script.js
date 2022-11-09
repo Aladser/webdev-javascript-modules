@@ -49,17 +49,17 @@ function select_operation(){
         if( !isNaN(last_sign) ){
             // число
             if( !isNaN(inputWindow.value) ){
-                first_number = parseInt( inputWindow.value );
+                first_number = parseInt(inputWindow.value);
                 inputWindow.value += this.textContent;
             }
-            // число + операция + число
+            // число|операция|число
             else{
                 first_number = calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
                 inputWindow.value =  first_number + this.textContent;
             }
             position = inputWindow.value.length;
         }
-        // введен знак - смена знака
+        // введен знак
         else
             inputWindow.value = inputWindow.value.slice(0, inputWindow.value.length-1) +this.textContent;
         operation = this.textContent;          
