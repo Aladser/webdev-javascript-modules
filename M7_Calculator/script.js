@@ -1,5 +1,6 @@
-let operation = null; // текущая операция
 const inputWindow = document.querySelector('#inputWindow'); // поле ввода
+
+let operation = null; // текущая операция
 let first_number = null;
 let position = null; // начало второго числа
 
@@ -9,9 +10,9 @@ document.querySelector('#btn_clr').addEventListener('click', function () {
     position = null;
     inputWindow.value = '';
 })
-// --------Нажатия цифр-------
+/** Нажатие цифры */
 function press_digit(event){
-    // ввод цифры после предыдущей операции
+    // ввод цифры после выполненного вычисления
     if(operation == null){
         inputWindow.value = this.textContent;
         operation = 'input';
@@ -20,16 +21,15 @@ function press_digit(event){
     else
         inputWindow.value += this.textContent;
 }
-// цифровые кнопки
 let digit_buttons = document.querySelectorAll('.btn-digit');
-// назначение событий нажатия цифр
 for(let i=0; i<digit_buttons.length; i++){
     digit_buttons[i].addEventListener('click', press_digit);
-} 
+}
+
 // -------арифметические операции-------
-// вычисление
-function calc(oprt, first_number, second_number){
-    switch(oprt){
+/** Вычисление */
+function calc(operation, first_number, second_number){
+    switch(operation){
         case '+':
             return first_number + second_number;
         case '-':
@@ -40,8 +40,8 @@ function calc(oprt, first_number, second_number){
             return first_number / second_number; 
     }
 }
-// ввод + или - или / или *
-function select_operation(event){
+/** Ввод знака арифметической операции*/
+function select_operation(){
     // игнор пустого поля 
     if (inputWindow.value != ''){
         let last_sign = inputWindow.value[inputWindow.value.length-1]; // последний знак
