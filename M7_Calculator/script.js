@@ -19,23 +19,17 @@ document.querySelector('#btn_clr').addEventListener('click', function () {
 // -------Кнопка равно------- 
 document.querySelector('#btn_equals').addEventListener('click', function () {
     // игнорирование пустого поля, арифм.знака
-    let last_sign = inputWindow.value[inputWindow.value.length-1];
     if (operation!='input' && operation!=null && !isNaN(last_sign)){
-        inputWindow.value =  calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
+        let second_number = parseInt(inputWindow.textContent.slice(position));
+        inputWindow.textContent =  calc(operation, first_number, second_number);
         operation = null;
     }
 })
 
-// -------цифры--------
+// -------ввод цифры--------
 function press_digit(){
-    // ввод цифры после выполненного вычисления
-    if(operation == null){
-        inputWindow.textContent = this.textContent;
-        operation = 'input';
-    }
-    // ввод цифры
-    else
-        inputWindow.textContent += this.textContent;
+    inputWindow.textContent = operation==null ? this.textContent : inputWindow.textContent + this.textContent;
+    operation = operation==null ? 'input' : operation;  
     last_sign = parseInt(this.textContent, 10);
 }
 
