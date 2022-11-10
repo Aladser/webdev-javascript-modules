@@ -1,65 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Калькулятор</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../gen_style.css" type="text/css"/>
+    <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
+
 <body>
-    <header>
-        <div>Назад</div>
-        <div>Меню</div>
-        <div>Вперед</div>
-    </header>
-    <main>
-        <div class="row calc-row align-items-center">
-            <div class="col col-md-4 offset-md-4">
-                <div class="form-group">
-                    <div class="card" id="calc">
-                        <div class="card-body">
-                            <input class="form-control input-window" id="inputWindow" value="">
-                            <div class="row no-gutters">
-                                <div class="col">
-                                    <button class="btn btn-outline-danger form-control" id="btn_clr">C</button>
-                                </div>
-                            </div>
-                            <!-- ряд 1,2,3,+ -->
-                            <div class="row no-gutters">
-                                <div class="col"> <button class="btn btn-outline-primary form-control btn-digit">1</button></div>
-                                <div class="col"> <button class="btn btn-outline-primary form-control btn-digit">2</button></div>
-                                <div class="col"> <button class="btn btn-outline-primary form-control btn-digit">3</button></div>
-                                <div class="col"> <button class="btn btn-outline-primary form-control btn-oprt">+</button></div>
-                            </div>
-                            <!-- ряд 4,5,6,- -->
-                            <div class="row no-gutters">
-                                <div class="col"> <button class="btn btn-outline-primary form-control btn-digit">4</button></div>
-                                <div class="col"> <button class="btn btn-outline-primary form-control btn-digit">5</button></div>
-                                <div class="col"> <button class="btn btn-outline-primary form-control btn-digit">6</button></div>
-                                <div class="col"> <button class="btn btn-outline-primary form-control btn-oprt">-</button></div>
-                            </div>
-                            <!-- ряд 7,8,9,* -->
-                            <div class="row no-gutters">
-                                <div class="col"><button class="btn btn-outline-primary form-control btn-digit">7</button></div>
-                                <div class="col"><button class="btn btn-outline-primary form-control btn-digit">8</button></div>
-                                <div class="col"><button class="btn btn-outline-primary form-control btn-digit">9</button></div>
-                                <div class="col"><button class="btn btn-outline-primary form-control btn-oprt">*</button></div>
-                            </div>
-                            <!-- ряд =,0,корень,/ -->
-                            <div class="row no-gutters">
-                                <div class="col"><button class="btn btn-outline-primary form-control" id="btn_equals">=</button></div>
-                                <div class="col"><button class="btn btn-outline-primary form-control btn-digit">0</button></div>
-                                <div class="col"><button class="btn btn-outline-primary form-control" id="btn_sqrt">&#8730</button></div>
-                                <div class="col"><button class="btn btn-outline-primary form-control btn-oprt">/</button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div id="container">
+        <div id="input-field"></div>
+        <div id="btn-field">
+            <div class="row main-row">
+                <button id='btn_clr'>C</button>
+                <button id="btn_equals">=</button>
+            </div>
+            <div class="row">
+                <button class="input-symbol digit-btn">1</button>
+                <button class="input-symbol digit-btn">2</button>
+                <button class="input-symbol digit-btn">3</button>
+                <button class="input-symbol oprt-btn">+</button>
+            </div>
+            <div class="row">
+                <button class="input-symbol digit-btn">4</button>
+                <button class="input-symbol digit-btn">5</button>
+                <button class="input-symbol digit-btn">6</button>
+                <button class="input-symbol oprt-btn">-</button>
+            </div>
+            <div class="row">
+                <button class="input-symbol digit-btn">7</button>
+                <button class="input-symbol digit-btn">8</button>
+                <button class="input-symbol digit-btn">9</button>
+                <button class="input-symbol oprt-btn">*</button>
+            </div>
+            <div class="row">
+                <button>.</button>
+                <button class="input-symbol digit-btn">0</button>
+                <button id="btn_sqrt">&#8730;</button>
+                <button class="input-symbol oprt-btn">/</button>
             </div>
         </div>
-    </main>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>

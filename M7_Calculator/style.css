@@ -1,0 +1,54 @@
+body{
+    margin: 0px;
+    margin-top: 10px;
+}
+#container{
+    border: 2px solid rgb(230, 230, 230);
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+/* поле вывода цифр */
+#input-field{
+    display: flex;
+    align-items:flex-end;
+    border: 2px solid rgb(230, 230, 230);
+    width: 95%;
+    height: 60px;
+    margin-bottom: 5px;
+    padding: 2%;
+    font-size: 25px;
+}
+/* Блок кнопок */
+#btn-field{font-weight: bolder;}
+/* ряд цифр */
+.row{
+    display: flex;
+    padding: 1px;;
+    width: 100%;
+    height: 50px;
+}
+.main-row{
+    margin-bottom: 1.5px;
+}
+/* кнопки */
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: green;
+    border-color: green;
+    font-weight: bolder;
+}
+button:hover{
+    color: white;
+    background-color: green;
+}

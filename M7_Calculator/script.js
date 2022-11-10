@@ -1,33 +1,45 @@
-const inputWindow = document.querySelector('#inputWindow'); // поле ввода
+const inputWindow = document.querySelector('#input-field'); // поле ввода
+let digit_buttons = document.querySelectorAll('.digit-btn');
+let calc_buttons = document.querySelectorAll('.oprt-btn');
+for(let i=0; i<digit_buttons.length; i++){digit_buttons[i].addEventListener('click', press_digit);}
+for(let i=0; i<calc_buttons.length; i++){calc_buttons[i].addEventListener('click', select_operation);} 
 
 let operation = null; // текущая операция
+let last_sign = null; // последний введенный символ
 let first_number = null;
 let position = null; // начало второго числа
 
-// -------кнопка сброса-------
+// -------Кнопка сброса-------
 document.querySelector('#btn_clr').addEventListener('click', function () {
     operation = null;
     position = null;
-    inputWindow.value = '';
+    inputWindow.textContent = '';
 })
-/** Нажатие цифры */
-function press_digit(event){
+
+// -------Кнопка равно------- 
+document.querySelector('#btn_equals').addEventListener('click', function () {
+    // игнорирование пустого поля, арифм.знака
+    let last_sign = inputWindow.value[inputWindow.value.length-1];
+    if (operation!='input' && operation!=null && !isNaN(last_sign)){
+        inputWindow.value =  calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
+        operation = null;
+    }
+})
+
+// -------цифры--------
+function press_digit(){
     // ввод цифры после выполненного вычисления
     if(operation == null){
-        inputWindow.value = this.textContent;
+        inputWindow.textContent = this.textContent;
         operation = 'input';
     }
     // ввод цифры
     else
-        inputWindow.value += this.textContent;
-}
-let digit_buttons = document.querySelectorAll('.btn-digit');
-for(let i=0; i<digit_buttons.length; i++){
-    digit_buttons[i].addEventListener('click', press_digit);
+        inputWindow.textContent += this.textContent;
+    last_sign = parseInt(this.textContent, 10);
 }
 
-// -------арифметические операции-------
-/** Вычисление */
+// -------кнопки + - */-------
 function calc(operation, first_number, second_number){
     switch(operation){
         case '+':
@@ -40,36 +52,36 @@ function calc(operation, first_number, second_number){
             return first_number / second_number; 
     }
 }
+
 /** Ввод знака арифметической операции*/
 function select_operation(){
     // игнор пустого поля 
-    if (inputWindow.value != ''){
-        let last_sign = inputWindow.value[inputWindow.value.length-1]; // последний знак
+    if (inputWindow.textContent != ''){
+
         // введено число
         if( !isNaN(last_sign) ){
             // число
-            if( !isNaN(inputWindow.value) ){
-                first_number = parseInt(inputWindow.value);
-                inputWindow.value += this.textContent;
+            if( !isNaN(inputWindow.textContent)){
+                first_number = parseInt(inputWindow.textContent);
+                inputWindow.textContent += this.textContent;
             }
             // число|операция|число
             else{
-                first_number = calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
-                inputWindow.value =  first_number + this.textContent;
+                first_number = calc(operation, first_number, parseInt(inputWindow.textContent.slice(position)));
+                inputWindow.textContent =  first_number + this.textContent;
             }
-            position = inputWindow.value.length;
+            position = inputWindow.textContent.length;
         }
         // введен знак
-        else
-            inputWindow.value = inputWindow.value.slice(0, inputWindow.value.length-1) +this.textContent;
-        operation = this.textContent;          
+        else{
+            console.log('событие')
+            inputWindow.textContent = inputWindow.textContent.slice(0, inputWindow.textContent.length-1) +this.textContent;
+        }
+        operation = this.textContent;
+        last_sign = inputWindow.textContent;          
     }
 }
-// кнопки + - * /
-let calc_buttons = document.querySelectorAll('.btn-oprt');
-for(let i=0; i<calc_buttons.length; i++){
-    calc_buttons[i].addEventListener('click', select_operation);
-} 
+
 // -------квадратный корень-------
 document.querySelector('#btn_sqrt').addEventListener('click', function () {
     let last_sign = inputWindow.value[inputWindow.value.length-1];
@@ -86,24 +98,4 @@ document.querySelector('#btn_sqrt').addEventListener('click', function () {
         inputWindow.value = Math.sqrt(rslt).toFixed(3);
         operation = null;
     }
-})
-// -------равно------- 
-document.querySelector('#btn_equals').addEventListener('click', function () {
-    // игнорирование пустого поля, арифм.знака
-    let last_sign = inputWindow.value[inputWindow.value.length-1];
-    if (operation!='input' && operation!=null && !isNaN(last_sign)){
-        inputWindow.value =  calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
-        operation = null;
-    }
-})
-// кнопки меню
-let pages = document.querySelectorAll('header div');
-pages[0].addEventListener('click', function(){
-    window.open("../M6_TrafficLight/index.html", "_self");
-});
-pages[1].addEventListener('click', function(){
-    window.open("../index.html", "_self");
-});
-pages[2].addEventListener('click', function(){
-    window.open("../M8_GuessNumber/index.html", "_self");
 })
