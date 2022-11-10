@@ -20,11 +20,38 @@ document.querySelector('#btn_clr').addEventListener('click', function () {
 document.querySelector('#btn_equals').addEventListener('click', function () {
     // игнорирование пустого поля, арифм.знака
     if (operation!='input' && operation!=null && !isNaN(last_sign)){
-        let second_number = parseInt(inputWindow.textContent.slice(position));
-        inputWindow.textContent =  calc(operation, first_number, second_number);
+        let second_number = parseFloat(inputWindow.textContent.slice(position));
+        inputWindow.textContent =  calc(operation, first_number, second_number).toFixed(3);
         operation = null;
     }
 })
+
+// ------ точка -------
+document.querySelector('#dot_btn').addEventListener('click', function(){
+    if(inputWindow.textContent != ''){
+        if(inputWindow.textContent.indexOf('.')==-1){
+            inputWindow.textContent += '.'
+        }
+        else if(getAriphOperation() != -1){
+            if( inputWindow.textContent.slice(getAriphOperation()).indexOf('.') == -1 && !isNaN(last_sign) )
+                inputWindow.textContent += '.'
+        }
+        last_sign = '.';
+    }
+})
+// индекс знак арифм.операции
+function getAriphOperation(){
+    let value = inputWindow.textContent;
+    let index = value.indexOf('+');
+    if(index !=-1) return index;
+    index = value.indexOf('-');
+    if(index !=-1) return index;
+    index = value.indexOf('*');
+    if(index !=-1) return index;
+    index = value.indexOf('/');
+    if(index !=-1) return index;
+    return -1;
+}
 
 // -------ввод цифры--------
 function press_digit(){
@@ -46,7 +73,6 @@ function calc(operation, first_number, second_number){
             return first_number / second_number; 
     }
 }
-
 /** Ввод знака арифметической операции*/
 function select_operation(){
     // игнор пустого поля 
@@ -55,21 +81,21 @@ function select_operation(){
         if( !isNaN(last_sign) ){
             // число
             if( !isNaN(inputWindow.textContent)){
-                first_number = parseInt(inputWindow.textContent);
+                first_number = parseFloat(inputWindow.textContent);
                 inputWindow.textContent += this.textContent;
             }
             // число|операция|число
             else{
-                let second_number = parseInt(inputWindow.textContent.slice(position))
-                first_number = calc(operation, first_number, second_number);
+                let second_number = parseFloat(inputWindow.textContent.slice(position))
+                first_number = calc(operation, first_number, second_number).toFixed(3);
                 inputWindow.textContent =  first_number + this.textContent;
             }
             position = inputWindow.textContent.length;
         }
         // введен знак
         else{
-            console.log('событие')
             inputWindow.textContent = inputWindow.textContent.slice(0, inputWindow.textContent.length-1) +this.textContent;
+            last_sign = this.textContent;
         }
         operation = this.textContent;
         last_sign = inputWindow.textContent;          
@@ -84,7 +110,7 @@ document.querySelector('#btn_sqrt').addEventListener('click', function () {
         let x;
         if(!isNaN(last_sign)){
             // _число_ или _число-операция-число_
-            let second_number = parseInt(inputWindow.textContent.slice(position))
+            let second_number = parseFloat(inputWindow.textContent.slice(position))
             x = !isNaN(inputWindow.textContent) ? inputWindow.textContent : calc(operation, first_number, second_number);
         }
         // последний знак - арифм.операция
