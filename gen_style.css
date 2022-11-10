@@ -2,10 +2,14 @@ body{
     margin: 0px;
     margin-top: 10px;
 }
+main{
+    height: 20%;
+}
 /* заголовок */
 header{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
 }
 header div{
