@@ -51,7 +51,6 @@ function calc(operation, first_number, second_number){
 function select_operation(){
     // игнор пустого поля 
     if (inputWindow.textContent != ''){
-
         // введено число
         if( !isNaN(last_sign) ){
             // число
@@ -61,7 +60,8 @@ function select_operation(){
             }
             // число|операция|число
             else{
-                first_number = calc(operation, first_number, parseInt(inputWindow.textContent.slice(position)));
+                let second_number = parseInt(inputWindow.textContent.slice(position))
+                first_number = calc(operation, first_number, second_number);
                 inputWindow.textContent =  first_number + this.textContent;
             }
             position = inputWindow.textContent.length;
@@ -78,18 +78,21 @@ function select_operation(){
 
 // -------квадратный корень-------
 document.querySelector('#btn_sqrt').addEventListener('click', function () {
-    let last_sign = inputWindow.value[inputWindow.value.length-1];
     // игнорирование пустой строки
-    if( inputWindow.value!='' ){
+    if( inputWindow.textContent != '' ){
         // последний знак - число
-        let rslt;
-        if(!isNaN(last_sign))
+        let x;
+        if(!isNaN(last_sign)){
             // _число_ или _число-операция-число_
-            rslt = !isNaN(inputWindow.value) ? inputWindow.value : calc(operation, first_number, parseInt(inputWindow.value.slice(position)));
+            let second_number = parseInt(inputWindow.textContent.slice(position))
+            x = !isNaN(inputWindow.textContent) ? inputWindow.textContent : calc(operation, first_number, second_number);
+        }
         // последний знак - арифм.операция
         else
-            rslt = inputWindow.value.slice(0, inputWindow.value.length-1);
-        inputWindow.value = Math.sqrt(rslt).toFixed(3);
+            x = inputWindow.textContent.slice(0, inputWindow.textContent.length-1);
+
+        inputWindow.textContent = Math.sqrt(x).toFixed(3);
         operation = null;
+        last_sign = inputWindow.textContent[inputWindow.textContent.length-1];
     }
 })
