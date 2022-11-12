@@ -20,7 +20,7 @@ document.querySelector('#btn_clr').addEventListener('click', function () {
 document.querySelector('#btn_equals').addEventListener('click', function () {
     // игнорирование пустого поля, арифм.знака
     if (operation!='input' && operation!=null && !isNaN(last_sign)){
-        let second_number = parseFloat(inputWindow.textContent.slice(position));
+        let second_number = inputWindow.textContent.slice(position);
         inputWindow.textContent =  calc(operation, first_number, second_number);
         operation = null;
     }
@@ -39,17 +39,21 @@ document.querySelector('#dot_btn').addEventListener('click', function(){
         last_sign = '.';
     }
 })
-// индекс знак арифм.операции
+// индекс знака арифм.операции
 function getAriphOperation(){
     let value = inputWindow.textContent;
     let index = value.indexOf('+');
-    if(index !=-1) return index;
+    if(index !=-1) 
+        return index;
     index = value.indexOf('-');
-    if(index !=-1) return index;
+    if(index !=-1) 
+        return index;
     index = value.indexOf('*');
-    if(index !=-1) return index;
+    if(index !=-1) 
+        return index;
     index = value.indexOf('/');
-    if(index !=-1) return index;
+    if(index !=-1) 
+        return index;
     return -1;
 }
 
@@ -78,7 +82,6 @@ function calc(operation, first_number, second_number){
             break;
     }
     // округление
-    console.log(rslt, typeof(rslt));
     if(rslt!=parseInt(rslt)){
         let remSize = String(rslt).split('.')[1].length; // длина остатка
         if (remSize>3) remSize = 3;
@@ -95,12 +98,12 @@ function select_operation(){
         if( !isNaN(last_sign) ){
             // число
             if( !isNaN(inputWindow.textContent)){
-                first_number = parseFloat(inputWindow.textContent);
+                first_number = inputWindow.textContent;
                 inputWindow.textContent += this.textContent;
             }
             // число|операция|число
             else{
-                let second_number = parseFloat(inputWindow.textContent.slice(position));
+                let second_number = inputWindow.textContent.slice(position);
                 first_number = calc(operation, first_number, second_number);
                 inputWindow.textContent =  first_number + this.textContent;
             }
@@ -108,7 +111,7 @@ function select_operation(){
         }
         // введен знак
         else{
-            inputWindow.textContent = inputWindow.textContent.slice(0, inputWindow.textContent.length-1) +this.textContent;
+            inputWindow.textContent = inputWindow.textContent.slice(0, inputWindow.textContent.length-1) + this.textContent;
             last_sign = this.textContent;
         }
         operation = this.textContent;
@@ -124,7 +127,7 @@ document.querySelector('#btn_sqrt').addEventListener('click', function () {
         let x;
         if(!isNaN(last_sign)){
             // _число_ или _число-операция-число_
-            let second_number = parseFloat(inputWindow.textContent.slice(position))
+            let second_number = inputWindow.textContent.slice(position);
             x = !isNaN(inputWindow.textContent) ? inputWindow.textContent : calc(operation, first_number, second_number);
         }
         // последний знак - арифм.операция
