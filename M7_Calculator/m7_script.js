@@ -21,7 +21,8 @@ document.querySelector('#btn_equals').addEventListener('click', function () {
     // игнорирование пустого поля, арифм.знака
     if (operation!='input' && operation!=null && !isNaN(last_sign)){
         let second_number = parseFloat(inputWindow.textContent.slice(position));
-        inputWindow.textContent =  calc(operation, first_number, second_number).toFixed(3);
+        let rslt = calc(operation, first_number, second_number);
+        inputWindow.textContent =  rslt==parseInt(rslt) ? rslt : rslt.toFixed(3);
         operation = null;
     }
 })
