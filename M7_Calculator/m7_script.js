@@ -21,8 +21,7 @@ document.querySelector('#btn_equals').addEventListener('click', function () {
     // игнорирование пустого поля, арифм.знака
     if (operation!='input' && operation!=null && !isNaN(last_sign)){
         let second_number = parseFloat(inputWindow.textContent.slice(position));
-        let rslt = calc(operation, first_number, second_number);
-        inputWindow.textContent =  rslt==parseInt(rslt) ? rslt : rslt.toFixed(3);
+        inputWindow.textContent =  calc(operation, first_number, second_number);
         operation = null;
     }
 })
@@ -63,16 +62,30 @@ function press_digit(){
 
 // -------кнопки + - */-------
 function calc(operation, first_number, second_number){
+    let rslt;
     switch(operation){
         case '+':
-            return first_number + second_number;
+            rslt = parseFloat(first_number) + parseFloat(second_number);
+            break;
         case '-':
-            return first_number - second_number;  
+            rslt = parseFloat(first_number) - parseFloat(second_number);
+            break;  
         case '*':
-            return first_number * second_number;  
-        case '/':
-            return first_number / second_number; 
+            rslt = parseFloat(first_number) * parseFloat(second_number);
+            break;  
+        default:
+            rslt = parseFloat(first_number) / parseFloat(second_number);
+            break;
     }
+    // округление
+    console.log(rslt, typeof(rslt));
+    if(rslt!=parseInt(rslt)){
+        let remSize = String(rslt).split('.')[1].length; // длина остатка
+        if (remSize>3) remSize = 3;
+        return rslt.toFixed(remSize);
+    }
+    else
+        return rslt;
 }
 /** Ввод знака арифметической операции*/
 function select_operation(){
@@ -87,8 +100,8 @@ function select_operation(){
             }
             // число|операция|число
             else{
-                let second_number = parseFloat(inputWindow.textContent.slice(position))
-                first_number = calc(operation, first_number, second_number).toFixed(3);
+                let second_number = parseFloat(inputWindow.textContent.slice(position));
+                first_number = calc(operation, first_number, second_number);
                 inputWindow.textContent =  first_number + this.textContent;
             }
             position = inputWindow.textContent.length;
