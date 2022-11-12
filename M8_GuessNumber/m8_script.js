@@ -12,8 +12,6 @@ inputGameFrame.style.display = "block";
 gameFrame.style.display = "none";
 
 let minValue, maxValue, minusK, orderNumber, gameRun;
-let questions = ['Вы загадали число', 'Может быть, это число', 'Легко! Это число', 'Думаю, это число', 'Интуиция подсказывает, это число'];
-let сongratulations = ['Красавчик!\u{1F60A}','Так держать!\u{1F44C}','Дай пять!\u{1F590}','Молодец! Сыграем еще?\u{1F60F}','Это было легко.\u{1F611}'];
 
 // кнопка получения минимального и максимального значений
 inputGameFrame.querySelector('.input-buttons').childNodes[1].addEventListener('click', function(){
@@ -67,6 +65,7 @@ function reduceSearchField(arrow){
                 answerField.innerText = answerPhrase;
                 gameRun = false;
             } else {
+                let questions = ['Вы загадали число', 'Может быть, это число', 'Легко! Это число', 'Думаю, это число', 'Интуиция подсказывает, это число'];
                 if(arrow == '<')
                     maxValue = answerNumber  - 1;
                 else
@@ -84,9 +83,10 @@ function reduceSearchField(arrow){
 }
 gameFrame.querySelector('#btnLess').addEventListener('click', function () {reduceSearchField('<')}) // кнопка меньше
 gameFrame.querySelector('#btnOver').addEventListener('click', function () {reduceSearchField('>')}) // кнопка больше
-// кнопка заново
+// кнопка Равно
 gameFrame.querySelector('#btnEqual').addEventListener('click', function () {
     if (gameRun){
+        let сongratulations = ['Красавчик!\u{1F60A}','Так держать!\u{1F44C}','Дай пять!\u{1F590}','Молодец! Сыграем еще?\u{1F60F}','Это было легко.\u{1F611}'];
         answerField.innerText =  сongratulations[Math.round(Math.random()*4)];
         gameRun = false;
     }
