@@ -7,7 +7,8 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="m8_style.css" type="text/css"/>
-    <link rel="stylesheet" href="../gen_style.css" type="text/css"/>
+    <link rel="stylesheet" href="../styles/gen_style.css" type="text/css"/>
+    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -15,67 +16,67 @@
         <div>Меню</div>
         <div>Вперед</div>
     </header>
-<main>
-    <!-- Окно игры -->
-    <div class="row game-card align-items-center">
-        <div class="col col-md-4 offset-md-4">
-            <div class="card text-center">
-                <div class="card-header">
-                    <p class="m-0">Вопрос №<span id="orderNumberField">5</span></p>
-                </div>
-                <div class="card-body">
-                    <div class="row no-gutters">
-                        <div class="col">
-                            <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
+    <main>
+        <!-- Окно игры -->
+        <div class="row game-card align-items-center">
+            <div class="col col-md-4 offset-md-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <p class="m-0">Вопрос №<span id="orderNumberField">5</span></p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row no-gutters">
+                            <div class="col">
+                                <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <div class="btn-group">
-                        <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
-                        <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
-                        <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
+                    <div class="card-body">
+                        <div class="btn-group">
+                            <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
+                            <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
+                            <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
+                        </div>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-link" id="btnRetry"> Заново</button>
+                    <div class="card-footer">
+                        <button class="btn btn-link" id="btnRetry"> Заново</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Модальное окно ввода чисел -->
-    <div id="input-game-frame" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h2> Игра <span style="font-weight:bolder">Угадай число</span> </h2> </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="input-text">
-                        Минимальное число  <input type="text" value='-100'>
-                        Максимальное число <input type="text" value="100">
-                    </div>
-                    <div class="input-buttons">
-                        <input type="button" value='Ввести'>
-                        <input type="button" value='Отмена'>
-                    </div>
-                </form>
+        <!-- Модальное окно ввода чисел -->
+        <div id="input-game-frame" class="modal">
+            <div class="modal-content">
+                <div class="modal-header"><h2> Игра <span style="font-weight:bolder">Угадай число</span> </h2> </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="input-text">
+                            Минимальное число  <input type="text" value='-100'>
+                            Максимальное число <input type="text" value="100">
+                        </div>
+                        <div class="input-buttons">
+                            <input type="button" value='Ввести'>
+                            <input type="button" value='Отмена'>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"></div>
             </div>
-            <div class="modal-footer"></div>
         </div>
-    </div>
-    <!-- Модальное окно запуск игры -->
-    <div id="start-game-frame" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h2> Угадай число </h2> </div>
-            <div class="modal-body">
-                <p>Тест</p>
-                <input type="button" value='Играть!'>
+        <!-- Модальное окно запуск игры -->
+        <div id="start-game-frame" class="modal">
+            <div class="modal-content">
+                <div class="modal-header"><h2> Угадай число </h2> </div>
+                <div class="modal-body">
+                    <p>Тест</p>
+                    <input type="button" value='Играть!'>
+                </div>
+                <div class="modal-footer"></div>
             </div>
-            <div class="modal-footer"></div>
         </div>
-    </div>
 
-</main>
-<script src="m8_script.js"></script>
+    </main>
 </body>
+<script src="m8_script.js"></script>
 </html>
