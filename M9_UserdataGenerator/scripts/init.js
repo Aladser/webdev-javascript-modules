@@ -5,7 +5,6 @@ function createData(isNewData){
     document.querySelector('#surnameOutput').innerHTML = isNewData ? person.surname : '';
     document.querySelector('#genderAndDateOutput').innerHTML = isNewData ? `${person.gender} ${person.dateOfBirth}`: '';
     document.querySelector('#profession').innerHTML = isNewData ? person.profession: '';
-    return person;
 }
 window.onload = () => createData(true); // инициализация
 document.querySelector('#updateData').addEventListener('click', () => createData(true)); // обновление даных

@@ -1,6 +1,6 @@
 const personGenerator = {
     surnameJson: `{  
-        "count": 15,
+        "count": 16,
         "list": {
             "id_1": "Плеханов",
             "id_2": "Смирнов",
