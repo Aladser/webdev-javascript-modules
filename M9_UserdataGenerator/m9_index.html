@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор случайных пользователей</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="../styles/gen_style.css" type="text/css"/>
+    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div>Назад</div>
+        <div>Меню</div>
+        <div>Вперед</div>
+    </header>
+    <div class="container">
+        <div class="row game-card align-items-center">
+            <div class="col col-md-6 offset-md-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <p class="m-0">Окно результатов генерации</p>
+                    </div>
+                    <div class="card-body">
+                            <div class="col">
+                                <div class="data-row">
+                                    <div class="data-label">Фамилия:</div><div class="data-output" id="surnameOutput">ФамилияШаблон</div>
+                                </div>
+                                <div class="data-row">
+                                    <div class="data-label">Имя Отчество:</div><div class="data-output" id="nameOutput">ИмяШаблон</div>
+                                </div>
+                                <div class="data-row">
+                                    <div class="data-label"></div><div class="data-output" id="genderAndDateOutput">ПолШаблон</div>
+                                </div>
+                                <div class="data-row">
+                                    <div class="data-label"></div><div class="data-output" id="profession">ПрофессияШаблон</div>
+                                </div>                            
+                            </div>
+                    </div>
+                    <div id="col-btn">
+                        <input type="button" value="Обновить" id="updateData">
+                        <input type="button" value="Очистить" id="clearData">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="scripts/personGenerator.js"></script>
+<script src="scripts/init.js"></script>
+</body>
+</html>

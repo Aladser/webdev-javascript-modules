@@ -1,0 +1,51 @@
+body{
+    margin-top: 10px;
+}
+/* поля вывода данных */
+.data-row{
+    display: flex;
+    padding: 5px;
+}
+.data-label{
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    width: 25%;
+    padding-left: 5px;
+}
+.data-output{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 75%;
+    padding-left: 5px;
+}
+#surnameOutput{
+    font-size: 30px;
+    font-weight: bolder;
+}
+#nameOutput{
+    font-size: 20px;
+    font-weight: bolder;
+}
+/* поле кнопок */
+#col-btn{
+    padding: 18px 0px;
+    border: 1px solid rgb(222, 222, 222);
+    background-color: rgb(247, 247, 247);
+}
+/* кнопки */
+#col-btn input{
+    width: 30%;
+    padding: 5px 20px;
+    margin: 0px 5px;
+    border: 1px solid rgb(222, 222, 222);
+    background-color: white;
+}
+#col-btn input:hover{
+    color: rgb(222, 222, 222);
+}
+#col-btn input:active{
+    border: 1px solid black;
+    color: black;
+}
