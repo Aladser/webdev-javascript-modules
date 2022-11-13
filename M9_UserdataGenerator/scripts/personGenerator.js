@@ -98,7 +98,7 @@ const personGenerator = {
     GENDER_MALE: 'мужчина',
     GENDER_FEMALE: 'женщина',
 
-    randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
+    randomIntNumber: (min = 0, max = 1) => Math.floor(Math.random() * (max - min + 1) + min),
     randomValue: function (json) {
         const obj = JSON.parse(json);
         const prop = `id_${this.randomIntNumber(obj.count, 1)}`;  // this = personGenerator
@@ -130,7 +130,7 @@ const personGenerator = {
 
         let year = this.randomIntNumber(1975, 2005);
         daysInMonth[1] = year%4==0 || year%100==0 && year%400==0 ? 29 : 28;
-        let monthIndex = this.randomIntNumber(11,0);
+        let monthIndex = this.randomIntNumber(0, 11);
         let day = this.randomIntNumber(1, daysInMonth[monthIndex]);
         return `${day} ${months[monthIndex]} ${year} г.р.`;
     },
