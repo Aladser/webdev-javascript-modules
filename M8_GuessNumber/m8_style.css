@@ -1,6 +1,6 @@
 /* Кнопка Заново окна игры */
 .btn-link{
-  width: 90%;
+  width: 45%;
   height: 100%;
   background-color: #23a843;
   color: white;
@@ -21,7 +21,7 @@
   text-decoration: none;
 }
   
-  * Модальное body */
+/* Модальное body */
 .modal-body {
   padding: 5px 16pxж
 }
