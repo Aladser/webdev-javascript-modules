@@ -1,3 +1,8 @@
+@font-face{
+    font-family: 'Roboto';
+    src:url('a_lcdnova.ttf');
+}
+
 body{
     margin: 0px;
     margin-top: 10px;
@@ -22,9 +27,12 @@ body{
     margin-bottom: 5px;
     padding: 2%;
     font-size: 25px;
+    font-family: Roboto;
 }
 /* Блок кнопок */
-#btn-field{font-weight: bolder;}
+#btn-field{
+    font-weight: bolder;
+}
 /* ряд цифр */
 .row{
     display: flex;
@@ -47,6 +55,7 @@ button{
     color: green;
     border-color: green;
     font-weight: bolder;
+    font-family: Roboto;
 }
 button:hover{
     color: white;
