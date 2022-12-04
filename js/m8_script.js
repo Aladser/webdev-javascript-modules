@@ -136,6 +136,6 @@ function printNumberAsString(number){
 }
 // -------кнопки меню-------
 let pages = document.querySelectorAll('header div');
-pages[0].addEventListener('click', function(){window.open("../M7_Calculator/m7_index.html", "_self");});
+pages[0].addEventListener('click', function(){window.open("../pages/m7_index.html", "_self");});
 pages[1].addEventListener('click', function(){window.open("../index.html", "_self");});
-pages[2].addEventListener('click', function(){window.open("../M9_UserdataGenerator/m9_index.html", "_self");})
+pages[2].addEventListener('click', function(){window.open("../pages/m9_index.html", "_self");})

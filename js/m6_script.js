@@ -13,6 +13,6 @@ const changeColor = setDevice(); // изменение цвета
 document.querySelectorAll('.trafficLight').forEach((elem)=>{elem.addEventListener('click', changeColor)});
 // -------кнопки меню-------
 let pages = document.querySelectorAll('header div');
-pages[0].addEventListener('click', function(){window.open("../M10_Vegetables_list/m10_index.html", "_self")});
+pages[0].addEventListener('click', function(){window.open("../pages/m10_index.html", "_self")});
 pages[1].addEventListener('click', function(){window.open("../index.html", "_self")});
-pages[2].addEventListener('click', function(){window.open("../M7_Calculator/m7_index.html", "_self")})
+pages[2].addEventListener('click', function(){window.open("../pages/m7_index.html", "_self")})
