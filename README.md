@@ -1,1 +1,1 @@
-[Модули](https://aladser.github.io/SkillFactory_WEBDEV_JS_Modules/)
+[Модули](https://github.com/Aladser/WEBDEV_JavaScript_Modules)
