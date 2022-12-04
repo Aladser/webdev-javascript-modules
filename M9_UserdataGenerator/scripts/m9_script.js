@@ -14,4 +14,4 @@ document.querySelector('#clearData').addEventListener('click',() => createData(f
 let pages = document.querySelectorAll('header div');
 pages[0].addEventListener('click', function(){window.open("../M8_GuessNumber/m8_index.html", "_self");});
 pages[1].addEventListener('click', function(){window.open("../index.html", "_self");});
-pages[2].addEventListener('click', function(){window.open("../M6_TrafficLight/m6_index.html", "_self");})
+pages[2].addEventListener('click', function(){window.open("../M10_Vegetables_list/m10_index.html", "_self");})

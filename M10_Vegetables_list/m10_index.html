@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../resources/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="../styles/gen_style.css" type="text/css"/>
+    <title>Овощи</title>
+  </head>
+
+  <body>
+    <header>
+      <div>Назад</div>
+      <div>Меню</div>
+      <div>Вперед</div>
+    </header>   
+    <main>
+      <!-- ПАНЕЛЬ УПРАВЛЕНИЯ -->
+      <section class="panel__wrapper">
+        <h2 class="wrapper__title">⚙️ Панель управления</h2>
+
+        <div class="panel__devtools">
+          <!-- TODO: при нажатии элементы массива перемешиваются в случайном порядке -->
+          <button class="shuffle__btn line">Перемешать</button>
+
+          <div class="line">
+            <!-- пользователь указывает нижнюю границу weight -->
+            <div>минимальный вес:</div>
+            <input class="minweight__input" />
+          </div>
+
+          <div class="line">
+            <!-- пользователь указывает верхнюю границу weight -->
+            <div>максимальный вес:</div>
+            <input class="maxweight__input" />
+          </div>
+
+          <!-- TODO: при нажатии элементы массива фильтруются в пределах [minweight, maxweight] -->
+          <button class="filter__btn line">Фильтровать</button>
+                    
+          <!-- TODO: при нажатии происходит сортировка и рассчет времени сортировки -->
+          <button class="sort__action__btn line">Сортировать</button>
+
+          <!-- пользователь указывает значения характеристик будущего фрукта -->
+          <div class="line">
+            <div>Вид:</div>
+            <input class="kind__input" />
+          </div>
+
+          <div class="line">
+            <div>Цвет:</div>
+            <select id="color__input"></select>
+          </div>
+
+          <div class="line" id="weight_line">
+            <div>Вес:</div>
+            <input class="weight__input" />
+          </div>
+
+          <!-- TODO: при нажатии новый фрукт добавляется в конец списка -->
+          <button class="add__action__btn line">Добавить фрукт</button>
+        </div>
+      </section>
+
+      <!-- СПИСОК ЭКЗОТИЧЕСКИХ ФРУКТОВ -->
+      <section class="vegetable__wrapper">
+        <h2 class="wrapper__title">🍆 Список овощей 🍆</h2>
+        <ul class="vegetable__list"></ul>
+      </section>
+    </main>
+
+    <script src="./js/SortAPI.js"></script>
+    <script src="./js/m10_script.js"></script>
+  </body>
+</html>

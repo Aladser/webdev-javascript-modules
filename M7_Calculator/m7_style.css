@@ -1,6 +1,6 @@
 @font-face{
     font-family: 'Roboto';
-    src:url('a_lcdnova.ttf');
+    src:url('../resources/a_lcdnova.ttf');
 }
 
 body{
