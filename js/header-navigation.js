@@ -1,19 +1,17 @@
 // ------- создание html-элементов -------
-let body = document.querySelector('body');
-
-let header = document.createElement('header');
-header.className = 'header-navigation';
+let headerElement = document.createElement('header');
+headerElement.className = 'header-navigation';
 
 for(let i=0; i<3; i++){
     let headerNavigation__link = document.createElement('div');
     headerNavigation__link.className = 'header-navigation__link';
-    header.appendChild(headerNavigation__link);
+    headerElement.appendChild(headerNavigation__link);
 }
-header.childNodes[0].textContent = 'Назад';
-header.childNodes[1].textContent = 'Меню';
-header.childNodes[2].textContent = 'Вперед';
+headerElement.childNodes[0].textContent = 'Назад';
+headerElement.childNodes[1].textContent = 'Меню';
+headerElement.childNodes[2].textContent = 'Вперед';
 
-body.appendChild(header);
+document.querySelector('body').appendChild(headerElement);
 
 // ------- создание переходов на страницы --------
 let titlePages = ['Светофор','Калькулятор','Угадайка','Генератор случайных пользователей','Овощи'];

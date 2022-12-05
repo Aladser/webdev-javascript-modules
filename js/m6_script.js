@@ -1,6 +1,6 @@
 // -------Светофор------
 function setDevice(){
-    let trafficLight = document.querySelectorAll('.trafficLight');
+    let trafficLight = document.querySelectorAll('.traffic-light-device__signal');
     let color = ['red','yellow','green'];
     let number = 2;
     return function(){
@@ -10,4 +10,4 @@ function setDevice(){
     }
 }
 const changeColor = setDevice(); // изменение цвета
-document.querySelectorAll('.trafficLight').forEach( elem => elem.addEventListener('click', changeColor));
+document.querySelectorAll('.traffic-light-device__signal').forEach( elem => elem.addEventListener('click', changeColor));
