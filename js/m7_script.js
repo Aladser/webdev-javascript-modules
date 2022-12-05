@@ -1,9 +1,6 @@
 const inputWindow = document.querySelector('.calculator-container__input');
-let digit_buttons = document.querySelectorAll('.calculator-container__digit-btn');
-digit_buttons.forEach(button => button.addEventListener('click', press_digit));
-let calc_buttons = document.querySelectorAll('.calculator-container__oprt-btn'); 
-calc_buttons.forEach(button => button.addEventListener('click', run_operation));
-
+document.querySelectorAll('.calculator-container__digit-btn').forEach(button => button.addEventListener('click', press_digit));
+document.querySelectorAll('.calculator-container__oprt-btn').forEach(button => button.addEventListener('click', run_operation));
 /** текущая операция */
 let operation = null;
 /** последний введенный символ */
@@ -63,7 +60,7 @@ function getAriphOperationIndex(){
 function press_digit(){
     inputWindow.textContent = operation==null ? this.textContent : inputWindow.textContent + this.textContent;
     operation = operation==null ? 'input' : operation;  
-    last_sign = parseInt(this.textContent, 10);
+    last_sign = parseInt(this.textContent);
 }
 
 // -------кнопки + - */-------

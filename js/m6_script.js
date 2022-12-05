@@ -9,5 +9,5 @@ function setDevice(){
         trafficLight[number].style.background = color[number];
     }
 }
-const changeColor = setDevice(); // изменение цвета
+const changeColor = setDevice(); // изменение цвета. Единая функция для цветов
 document.querySelectorAll('.traffic-light-device__signal').forEach( elem => elem.addEventListener('click', changeColor));
