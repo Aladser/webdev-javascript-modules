@@ -1,5 +1,5 @@
 const inputWindow = document.querySelector('#input-field'); // поле ввода
-let digit_buttons = document.querySelectorAll('.digit-btn');
+let digit_buttons = document.querySelectorAll('.digit-btn'); // кнопки цифр
 let calc_buttons = document.querySelectorAll('.oprt-btn');
 for(let i=0; i<digit_buttons.length; i++){digit_buttons[i].addEventListener('click', press_digit);}
 for(let i=0; i<calc_buttons.length; i++){calc_buttons[i].addEventListener('click', select_operation);} 

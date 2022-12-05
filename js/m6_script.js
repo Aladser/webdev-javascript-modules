@@ -10,4 +10,4 @@ function setDevice(){
     }
 }
 const changeColor = setDevice(); // изменение цвета
-document.querySelectorAll('.trafficLight').forEach((elem)=>{elem.addEventListener('click', changeColor)});
+document.querySelectorAll('.trafficLight').forEach( elem => elem.addEventListener('click', changeColor));
