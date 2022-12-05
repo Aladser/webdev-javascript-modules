@@ -56,33 +56,33 @@ document.querySelector('#btnRetry').addEventListener('click', function () {
 
 // Обработчик кнопок Меньше и Больше
 function reduceSearchField(arrow){
-        if (gameRun){
-            if (minValue === maxValue || minValue > maxValue){
-                const phraseRandom = Math.round( Math.random());
-                const answerPhrase = (phraseRandom === 1) ?
-                    `Вы загадали неправильное число!\n\u{1F914}` :
-                    `Я сдаюсь..\n\u{1F92F}`;
-                answerField.innerText = answerPhrase;
-                gameRun = false;
-            } else {
-                let questions = ['Вы загадали число', 'Может быть, это число', 'Легко! Это число', 'Думаю, это число', 'Интуиция подсказывает, это число'];
-                if(arrow == '<')
-                    maxValue = answerNumber  - 1;
-                else
-                    minValue = answerNumber  + 1;
-                answerNumber = (2*minusK + minValue + maxValue)/2;
-		        answerNumber = minValue<0 && maxValue<0 ? Math.ceil(answerNumber) : Math.floor(answerNumber);
-		        answerNumber = answerNumber - minusK;
-                
-                orderNumber++;
-                orderNumberField.innerText = orderNumber;
-                answerField.innerText =  `${questions[Math.round(Math.random()*4)]} ${answerNumber} ?`;
+    if (gameRun){
+        if (minValue === maxValue || minValue > maxValue){
+            const phraseRandom = Math.round( Math.random());
+            const answerPhrase = (phraseRandom === 1) ?
+                `Вы загадали неправильное число!\n\u{1F914}` :
+                `Я сдаюсь..\n\u{1F92F}`;
+            answerField.innerText = answerPhrase;
+            gameRun = false;
+        } 
+        else {
+            let questions = ['Вы загадали число', 'Может быть, это число', 'Легко! Это число', 'Думаю, это число', 'Интуиция подсказывает, это число'];
+            if(arrow == '<')
+                maxValue = answerNumber  - 1;
+            else
+                minValue = answerNumber  + 1;
+            answerNumber = (2*minusK + minValue + maxValue)/2;
+            answerNumber = minValue<0 && maxValue<0 ? Math.ceil(answerNumber) : Math.floor(answerNumber);
+            answerNumber = answerNumber - minusK;
+            
+            orderNumber++;
+            orderNumberField.innerText = orderNumber;
+            answerField.innerText =  `${questions[Math.round(Math.random()*4)]} ${answerNumber} ?`;
         }
-        console.log(minValue, answerNumber, maxValue);
     }
 }
-gameFrame.querySelector('#btnLess').addEventListener('click', function () {reduceSearchField('<')}) // кнопка меньше
-gameFrame.querySelector('#btnOver').addEventListener('click', function () {reduceSearchField('>')}) // кнопка больше
+gameFrame.querySelector('#btnLess').addEventListener('click', () => reduceSearchField('<')); // кнопка меньше
+gameFrame.querySelector('#btnOver').addEventListener('click', () => reduceSearchField('>')); // кнопка больше
 // кнопка Равно
 gameFrame.querySelector('#btnEqual').addEventListener('click', function () {
     if (gameRun){
