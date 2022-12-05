@@ -1,4 +1,4 @@
-const inputGameFrame = document.querySelector('#input-game-frame'); // модальное окно ввода данных
+const inputGameFrame = document.querySelector('#input-numbers-frame'); // модальное окно ввода данных
 const startGameFrame = document.querySelector('#start-game-frame'); // модальное окно запуска игры
 const gameFrame = document.querySelector('.card'); // окно игры
 const minValueInput = inputGameFrame.querySelector('.input-text').childNodes[1]; // поле минимального значения

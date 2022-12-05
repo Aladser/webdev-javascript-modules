@@ -5,17 +5,16 @@
     <title>Угадайка</title>
     <link rel="shortcut icon" href="../resources/icon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="../styles/m8_style.css">
     <link rel="stylesheet" href="../styles/gen_style.css">
-    <link href="https://allfont.ru/allfont.css?fonts=a_lcdnova" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <script src="../js/header-navigation.js"></script>
     <main>
         <!-- Окно игры -->
-        <div class="row game-card align-items-center">
+        <section class="row game-card align-items-center">
             <div class="col col-md-4 offset-md-4">
                 <div class="card text-center">
                     <div class="card-header">
@@ -40,10 +39,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Модальное окно ввода чисел -->
-        <div id="input-game-frame" class="modal">
+        <section class="modal" id="input-numbers-frame">
             <div class="modal-content">
                 <div class="modal-header"><h2> Игра <span style="font-weight:bolder">Угадай число</span> </h2> </div>
                 <div class="modal-body">
@@ -60,9 +59,10 @@
                 </div>
                 <div class="modal-footer"></div>
             </div>
-        </div>
-        <!-- Модальное окно запуск игры -->
-        <div id="start-game-frame" class="modal">
+        </section>
+        
+        <!-- Модальное окно запуска игры -->
+        <section class="modal" id="start-game-frame">
             <div class="modal-content">
                 <div class="modal-header"><h2> Угадай число </h2> </div>
                 <div class="modal-body">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="modal-footer"></div>
             </div>
-        </div>
+        </section>
 
     </main>
     <script src="../js/m8_script.js"></script>
