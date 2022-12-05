@@ -1,1 +1,1 @@
-[Модули](https://aladser.github.io/WEBDEV_JavaScript_Modules)
+[Модули](https://aladser.github.io/webdev-javascript-modules/)
