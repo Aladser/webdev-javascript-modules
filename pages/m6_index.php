@@ -5,7 +5,7 @@
         <title>Светофор</title>
         <link rel="shortcut icon" href="../resources/icon.ico">
         <link rel="stylesheet" href="../styles/m6_style.css">
-        <link rel="stylesheet" href="../styles/gen_style.css">
+        <link rel="stylesheet" href="../styles/gen_style.css">1
     </head>
     <body>
         <?php include 'header-navigation.php' ?>
