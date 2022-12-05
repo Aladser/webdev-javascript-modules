@@ -43,11 +43,11 @@
 
         <!-- Модальное окно ввода чисел -->
         <section class="modal" id="input-numbers-frame">
-            <div class="modal-content">
-                <div class="modal-header"><h2> Игра <span style="font-weight:bolder">Угадай число</span> </h2> </div>
-                <div class="modal-body">
+            <div class="modal-container">
+                <div class="modal-container__header"><h2> Игра Угадай число </h2> </div>
+                <div class="modal-container__body">
                     <form action="">
-                        <div class="input-text">
+                        <div class="modal-container__input">
                             Минимальное число  <input type="text" value='-100'>
                             Максимальное число <input type="text" value="100">
                         </div>
@@ -57,19 +57,19 @@
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer"></div>
+                <div class="modal-container__footer"></div>
             </div>
         </section>
         
         <!-- Модальное окно запуска игры -->
         <section class="modal" id="start-game-frame">
-            <div class="modal-content">
-                <div class="modal-header"><h2> Угадай число </h2> </div>
-                <div class="modal-body">
+            <div class="modal-container">
+                <div class="modal-container__header"><h2> Угадай число </h2> </div>
+                <div class="modal-container__body">
                     <p>Тест</p>
                     <input type="button" value='Играть!'>
                 </div>
-                <div class="modal-footer"></div>
+                <div class="modal-container__footer"></div>
             </div>
         </section>
 

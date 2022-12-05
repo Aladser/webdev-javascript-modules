@@ -1,5 +1,5 @@
 /* Модальный контейнер */
-.modal-content {
+.modal-container {
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -8,32 +8,31 @@
   width: 55%;
   box-shadow: 1px 3px 3px;
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
 }
 
 /* Модальный заголовок */
-.modal-header {
+.modal-container__header {
   padding: 2px 16px;
   background-color: #23a843;
   color: white;
   text-decoration: none;
 }
-/* Модальное body */
-.modal-body {
-  padding: 5px 16pxж
-}
-/* кнопки и inputs модального окна начала игры */
-.modal-body p{
-  text-align: center;
-}
-.modal-body div{
-  padding: 5px 0px;
-}
 /* Модальный footer */
-.modal-footer {
+.modal-container__footer {
   padding: 2px 16px;
   background-color: #0182be;
   color: white;
+}
+/* Модальное body */
+.modal-container__body {
+  padding: 10px 15px;
+}
+.modal-container__body p{
+  text-align: center;
+}
+.modal-container__body div{
+  padding: 5px 0px;
 }
 
 /* кнопки модального окна ввода */
@@ -47,12 +46,12 @@
   width: 150px;
 }
 /* inputs модального окна ввода */
-.input-text{
+.modal-container__input{
 display: flex;
 justify-content: center;
 padding: 3px 5px;  
 }
-.input-text label, input{
+.modal-container__input label, input{
 margin: 0px 10px;
 vertical-align:middle
 }
@@ -63,7 +62,7 @@ vertical-align:middle
   to {top: 0; opacity: 1}
 }
 
-#start-game-frame .modal-body{
+#start-game-frame .modal-container__body{
   display: flex;
   justify-content: center;
   align-items: center;

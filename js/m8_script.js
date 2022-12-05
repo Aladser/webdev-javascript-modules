@@ -1,8 +1,8 @@
 const inputGameFrame = document.querySelector('#input-numbers-frame'); // модальное окно ввода данных
 const startGameFrame = document.querySelector('#start-game-frame'); // модальное окно запуска игры
 const gameFrame = document.querySelector('.card'); // окно игры
-const minValueInput = inputGameFrame.querySelector('.input-text').childNodes[1]; // поле минимального значения
-const maxValueInput = inputGameFrame.querySelector('.input-text').childNodes[3]; // поле максимального значения
+const minValueInput = inputGameFrame.querySelector('.modal-container__input').childNodes[1]; // поле минимального значения
+const maxValueInput = inputGameFrame.querySelector('.modal-container__input').childNodes[3]; // поле максимального значения
 const orderNumberField = document.getElementById('orderNumberField'); // поле номера вопроса
 const answerField = document.getElementById('answerField'); // поле ответа
 
