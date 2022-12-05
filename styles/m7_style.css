@@ -7,7 +7,8 @@ body{
     margin: 0px;
     margin-top: 10px;
 }
-#container{
+
+.calculator-container{
     border: 2px solid rgb(230, 230, 230);
     border-radius: 5px;
     padding: 10px;
@@ -17,8 +18,8 @@ body{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
 }
-/* поле вывода цифр */
-#input-field{
+
+.calculator-container__input{
     display: flex;
     align-items:flex-end;
     border: 2px solid rgb(230, 230, 230);
@@ -29,22 +30,19 @@ body{
     font-size: 25px;
     font-family: Roboto;
 }
-/* Блок кнопок */
-#btn-field{
+
+.calculator-container__buttons-block{
     font-weight: bolder;
 }
-/* ряд цифр */
-.row{
+
+.calculator-container__row{
     display: flex;
     padding: 1px;;
     width: 100%;
     height: 50px;
 }
-.main-row{
-    margin-bottom: 1.5px;
-}
-/* кнопки */
-button{
+
+.calculator-container__button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +55,7 @@ button{
     font-weight: bolder;
     font-family: Roboto;
 }
-button:hover{
+.calculator-container__button:hover{
     color: white;
     background-color: green;
 }

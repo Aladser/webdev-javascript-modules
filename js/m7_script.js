@@ -1,7 +1,7 @@
-const inputWindow = document.querySelector('#input-field'); // поле ввода
-let digit_buttons = document.querySelectorAll('.digit-btn'); // кнопки цифр
+const inputWindow = document.querySelector('.calculator-container__input');
+let digit_buttons = document.querySelectorAll('.calculator-container__digit-btn');
 digit_buttons.forEach(button => button.addEventListener('click', press_digit));
-let calc_buttons = document.querySelectorAll('.oprt-btn'); // кнопки операций
+let calc_buttons = document.querySelectorAll('.calculator-container__oprt-btn'); 
 calc_buttons.forEach(button => button.addEventListener('click', run_operation));
 
 /** текущая операция */
@@ -14,14 +14,14 @@ let first_number = null;
 let position = null;
 
 // -------Кнопка сброса-------
-document.querySelector('#btn_clr').addEventListener('click', function () {
+document.querySelector('.calculator-container__button-clear').addEventListener('click', function () {
     operation = null;
     position = null;
     inputWindow.textContent = '';
 })
 
 // -------Кнопка равно------- 
-document.querySelector('#btn_equals').addEventListener('click', function () {
+document.querySelector('.calculator-container__button-equals').addEventListener('click', function () {
     // игнорирование пустого поля, арифм.знака
     if (operation!='input' && operation!=null && !isNaN(last_sign)){
         let second_number = inputWindow.textContent.slice(position);
@@ -31,7 +31,7 @@ document.querySelector('#btn_equals').addEventListener('click', function () {
 })
 
 // ------ точка -------
-document.querySelector('#dot_btn').addEventListener('click', function(){
+document.querySelector('.calculator-container__dot-btn').addEventListener('click', function(){
     // игнор пустой строки и последней не цифры
     if(inputWindow.textContent != '' && !isNaN(last_sign)){
         // если нет точки
@@ -49,6 +49,7 @@ document.querySelector('#dot_btn').addEventListener('click', function(){
         }
     }
 })
+
 /** найти индекс знака арифм.операции                                                           
  *  "-1" - знак не найден
 */
@@ -84,6 +85,7 @@ function calc(operation, first_number, second_number){
     }
     return roundNumber(rslt, 6);
 }
+
 /** Ввод знака арифметической операции*/
 function run_operation(){
     // игнор пустого поля 
@@ -115,7 +117,7 @@ function run_operation(){
 }
 
 // -------квадратный корень-------
-document.querySelector('#btn_sqrt').addEventListener('click', function () {
+document.querySelector('.calculator-container__btn-sqrt').addEventListener('click', function () {
     // игнорирование пустой строки
     if( inputWindow.textContent != '' ){
         // последний знак - число

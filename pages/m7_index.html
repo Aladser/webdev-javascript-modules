@@ -5,47 +5,48 @@
     <meta charset="UTF-8">
     <title>Калькулятор</title>
     <link rel="shortcut icon" href="../resources/icon.ico">
-    <link rel="stylesheet" href="../styles/m7_style.css">
     <link rel="stylesheet" href="../styles/gen_style.css">
+    <link rel="stylesheet" href="../styles/m7_style.css">
 </head>
 
 <body>
     <script src="../js/header-navigation.js"></script>
-    <div id="container">
-        <div id="input-field"></div>
-        <div id="btn-field">
-            <div class="row main-row">
-                <button id='btn_clr'>C</button>
-                <button id="btn_equals">=</button>
-            </div>
-            <div class="row">
-                <button class="input-symbol digit-btn">1</button>
-                <button class="input-symbol digit-btn">2</button>
-                <button class="input-symbol digit-btn">3</button>
-                <button class="input-symbol oprt-btn">+</button>
-            </div>
-            <div class="row">
-                <button class="input-symbol digit-btn">4</button>
-                <button class="input-symbol digit-btn">5</button>
-                <button class="input-symbol digit-btn">6</button>
-                <button class="input-symbol oprt-btn">-</button>
-            </div>
-            <div class="row">
-                <button class="input-symbol digit-btn">7</button>
-                <button class="input-symbol digit-btn">8</button>
-                <button class="input-symbol digit-btn">9</button>
-                <button class="input-symbol oprt-btn">*</button>
-            </div>
-            <div class="row">
-                <button id="dot_btn">.</button>
-                <button class="input-symbol digit-btn">0</button>
-                <button id="btn_sqrt">&#8730;</button>
-                <button class="input-symbol oprt-btn">/</button>
+    <main>
+        <div class="calculator-container">
+            <div class="calculator-container__input"></div>
+            <div class="calculator-container__buttons-block">
+                <div class="calculator-container__row">
+                    <button class='calculator-container__button calculator-container__button-clear'>C</button>
+                    <button class="calculator-container__button calculator-container__button-equals">=</button>
+                </div>
+                <div class="calculator-container__row">
+                    <button class="calculator-container__button calculator-container__digit-btn">1</button>
+                    <button class="calculator-container__button calculator-container__digit-btn">2</button>
+                    <button class="calculator-container__button calculator-container__digit-btn">3</button>
+                    <button class="calculator-container__button calculator-container__oprt-btn">+</button>
+                </div>
+                <div class="calculator-container__row">
+                    <button class="calculator-container__button calculator-container__digit-btn">4</button>
+                    <button class="calculator-container__button calculator-container__digit-btn">5</button>
+                    <button class="calculator-container__button calculator-container__digit-btn">6</button>
+                    <button class="calculator-container__button calculator-container__oprt-btn">-</button>
+                </div>
+                <div class="calculator-container__row">
+                    <button class="calculator-container__button calculator-container__digit-btn">7</button>
+                    <button class="calculator-container__button calculator-container__digit-btn">8</button>
+                    <button class="calculator-container__button calculator-container__digit-btn">9</button>
+                    <button class="calculator-container__button calculator-container__oprt-btn">*</button>
+                </div>
+                <div class="calculator-container__row">
+                    <button class="calculator-container__button calculator-container__dot-btn">.</button>
+                    <button class="calculator-container__button calculator-container__digit-btn">0</button>
+                    <button class="calculator-container__button calculator-container__btn-sqrt">&#8730;</button>
+                    <button class="calculator-container__button calculator-container__oprt-btn">/</button>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
     <script src="../js/m7_script.js"></script>
-    <script src="../js/navigation.js"></script>
 </body>
 
 </html>
