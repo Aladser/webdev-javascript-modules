@@ -1,30 +1,33 @@
 body{
     margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
 }
-/* блоки как строка */
-main{
+
+.pages-section{
     display: flex;
     justify-content: center;
-    padding-top: 10px; /* отступ от верха */
 }
-main div{
+
+.pages-section__link-block{
     width: 10%;
     text-align: center;
     border: 1px solid green;
     padding: 5px 10px;
 }
-main div:hover{
-    background-color: green;
-}
-main div:hover a{
-    color: white;
-}
-/* ссылки как блоки */
-a{
+
+.pages-section__link{
     display: block;
     text-decoration: none;
     width: 100%;
     height: 100%;
     color: green;
     padding: 5px;
+}
+
+.pages-section__link-block:hover{
+    background-color: green;
+}
+.pages-section__link-block:hover .pages-section__link{
+    color: white;
 }

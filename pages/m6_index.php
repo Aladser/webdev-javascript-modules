@@ -8,11 +8,7 @@
         <link rel="stylesheet" href="../styles/gen_style.css">
     </head>
     <body>
-        <header>
-            <div>Назад</div>
-            <div>Меню</div>
-            <div>Вперед</div>
-        </header>
+        <?php include 'header-navigation.php' ?>
         <main>
             <div id="device">
                 <div class="trafficLight"></div>
