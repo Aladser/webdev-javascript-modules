@@ -1,7 +1,3 @@
-@font-face{
-  font-family: 'Roboto';
-  src:url('a_lcdnova.ttf');
-}
 /* Кнопка Заново окна игры */
 .btn-link{
   width: 45%;
