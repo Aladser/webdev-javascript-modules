@@ -32,7 +32,7 @@ document.querySelector('#btn_equals').addEventListener('click', function () {
 
 // ------ точка -------
 document.querySelector('#dot_btn').addEventListener('click', function(){
-    // игнор пустой строки и последней не циф
+    // игнор пустой строки и последней не цифры
     if(inputWindow.textContent != '' && !isNaN(last_sign)){
         // если нет точки
         if(inputWindow.textContent.indexOf('.')==-1){
@@ -130,7 +130,7 @@ document.querySelector('#btn_sqrt').addEventListener('click', function () {
             let lastSignIndex = inputWindow.textContent.length-1;
             x = inputWindow.textContent.slice(0, lastSignIndex);
         }
-        inputWindow.textContent = Math.sqrt(x).toFixed(3);
+        inputWindow.textContent = roundNumber(Math.sqrt(x), 6);
         operation = null;
         last_sign = inputWindow.textContent[inputWindow.textContent.length-1];
     }
