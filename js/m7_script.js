@@ -32,37 +32,30 @@ document.querySelector('#btn_equals').addEventListener('click', function () {
 
 // ------ точка -------
 document.querySelector('#dot_btn').addEventListener('click', function(){
-    if(inputWindow.textContent != ''){
+    if(inputWindow.textContent != '' && !isNaN(last_sign)){
         // если нет точки
         if(inputWindow.textContent.indexOf('.')==-1){
-            inputWindow.textContent += '.'
+            inputWindow.textContent += '.';
+            last_sign = '.';
         }
         // если есть точка и введен знак арифм.операции
         else if(getAriphOperationIndex() != -1){
-            if( inputWindow.textContent.slice(getAriphOperationIndex()).indexOf('.') == -1 && !isNaN(last_sign) )
+            let secondDotIndex = inputWindow.textContent.slice(getAriphOperationIndex()).indexOf('.'); // поиск второй точки
+            if( secondDotIndex == -1 && !isNaN(last_sign) ){ 
                 inputWindow.textContent += '.'
+                last_sign = '.';
+            }
         }
-        last_sign = '.';
     }
 })
 /** найти индекс знака арифм.операции                                                           
  *  "-1" - знак не найден
 */
 function getAriphOperationIndex(){
-    let value = inputWindow.textContent;
-    let index = value.indexOf('+');
-    if(index !=-1) 
-        return index;
-    index = value.indexOf('-');
-    if(index !=-1) 
-        return index;
-    index = value.indexOf('*');
-    if(index !=-1) 
-        return index;
-    index = value.indexOf('/');
-    if(index !=-1) 
-        return index;
-    return -1;
+    let ariphSignesList = ['+','-','*','/'];
+    let str = inputWindow.textContent.split('');
+    let ariphSign = str.filter(sign => ariphSignesList.includes(sign));
+    return ariphSign.length==0 ? -1 : str.indexOf(ariphSign[0]); 
 }
 
 // -------ввод цифры--------
@@ -92,7 +85,7 @@ function calc(operation, first_number, second_number){
     // округление
     if(rslt!=parseInt(rslt)){
         let remSize = String(rslt).split('.')[1].length; // длина остатка
-        if (remSize>3) remSize = 3;
+        if (remSize>6) remSize = 6;
         return rslt.toFixed(remSize);
     }
     else
@@ -123,7 +116,7 @@ function run_operation(){
             last_sign = this.textContent;
         }
         operation = this.textContent;
-        last_sign = inputWindow.textContent;          
+        last_sign = inputWindow.textContent[inputWindow.textContent.length-1];          
     }
 }
 
