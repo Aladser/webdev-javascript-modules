@@ -32,6 +32,7 @@ document.querySelector('#btn_equals').addEventListener('click', function () {
 
 // ------ точка -------
 document.querySelector('#dot_btn').addEventListener('click', function(){
+    // игнор пустой строки и последней не циф
     if(inputWindow.textContent != '' && !isNaN(last_sign)){
         // если нет точки
         if(inputWindow.textContent.indexOf('.')==-1){
@@ -52,9 +53,8 @@ document.querySelector('#dot_btn').addEventListener('click', function(){
  *  "-1" - знак не найден
 */
 function getAriphOperationIndex(){
-    let ariphSignesList = ['+','-','*','/'];
     let str = inputWindow.textContent.split('');
-    let ariphSign = str.filter(sign => ariphSignesList.includes(sign));
+    let ariphSign = str.filter(sign => ['+','-','*','/'].includes(sign));
     return ariphSign.length==0 ? -1 : str.indexOf(ariphSign[0]); 
 }
 
@@ -82,14 +82,7 @@ function calc(operation, first_number, second_number){
             rslt = parseFloat(first_number) / parseFloat(second_number);
             break;
     }
-    // округление
-    if(rslt!=parseInt(rslt)){
-        let remSize = String(rslt).split('.')[1].length; // длина остатка
-        if (remSize>6) remSize = 6;
-        return rslt.toFixed(remSize);
-    }
-    else
-        return rslt;
+    return roundNumber(rslt, 6);
 }
 /** Ввод знака арифметической операции*/
 function run_operation(){
@@ -110,9 +103,10 @@ function run_operation(){
             }
             position = inputWindow.textContent.length;
         }
-        // введен знак
+        // введен знак - смена знака
         else{
-            inputWindow.textContent = inputWindow.textContent.slice(0, inputWindow.textContent.length-1) + this.textContent;
+            let lastSignIndex = inputWindow.textContent.length-1;
+            inputWindow.textContent = inputWindow.textContent.slice(0, lastSignIndex) + this.textContent;
             last_sign = this.textContent;
         }
         operation = this.textContent;
@@ -132,11 +126,22 @@ document.querySelector('#btn_sqrt').addEventListener('click', function () {
             x = !isNaN(inputWindow.textContent) ? inputWindow.textContent : calc(operation, first_number, second_number);
         }
         // последний знак - арифм.операция
-        else
-            x = inputWindow.textContent.slice(0, inputWindow.textContent.length-1);
-
+        else{
+            let lastSignIndex = inputWindow.textContent.length-1;
+            x = inputWindow.textContent.slice(0, lastSignIndex);
+        }
         inputWindow.textContent = Math.sqrt(x).toFixed(3);
         operation = null;
         last_sign = inputWindow.textContent[inputWindow.textContent.length-1];
     }
 })
+
+// ------- округление числа -------
+function roundNumber(number, remValue=3){
+    if(number != parseInt(number)){
+        let remSize = String(number).split('.')[1].length; // длина остатка
+        return remSize>remValue ? number.toFixed(remValue) : number.toFixed(remSize);
+    }
+    else
+        return number;
+}
