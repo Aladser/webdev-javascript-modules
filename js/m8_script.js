@@ -83,6 +83,7 @@ function reduceSearchField(arrow){
         }
     }
 }
+
 gameFrame.querySelector('#btnLess').addEventListener('click', () => reduceSearchField('<')); // кнопка меньше
 gameFrame.querySelector('#btnOver').addEventListener('click', () => reduceSearchField('>')); // кнопка больше
 // кнопка Равно
@@ -93,46 +94,3 @@ gameFrame.querySelector('#btnEqual').addEventListener('click', function () {
         gameRun = false;
     }
 })
-// вывести число строкой
-// rank2 - второй разряд, rank3 - третий разряд. Соотвествуют индексу в нужном массиве
-function printNumberAsString(number){
-    let twelweNumbers = ['один','два','три','четыре','пять','шесть','семь','восемь','девять','десять',
-    'одиннадцать','двенадцать','тринадцать','четырнадцать','пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать','двадцать'];
-    let ten = ['двадцать','тридцать','сорок','пятьдесят','шестьдесят','семьдесят','восемьдесят','девяносто'];
-    let hundreds = ['сто','двести','триста','четыреста','пятьсот','шестьсот','семьсот','восемьсот','девятьсот']
-    let rslt = "";
-
-    let mod_number = Math.abs(number); // модуль числа
-    // 0
-    if(mod_number==0)
-        rslt = 0
-    // 0..20
-    else if(mod_number<21)
-        rslt = twelweNumbers[mod_number-1]
-    // 21..99
-    else if(mod_number < 100){
-        let rank2 = Math.floor(mod_number/10) - 2;
-        rslt =  mod_number%10!=0 ? `${ten[rank2]} ${twelweNumbers[mod_number%10-1]}` : ten[rank2]; 
-    }
-    // 100 ... 999
-    else{
-        rank3 = Math.floor(mod_number / 100) - 1; 
-        rem = mod_number%100; // остаток от деления на 100
-        // x00
-        if(rem == 0)
-            rslt =  hundreds[rank3];
-        // x01..x20
-        else if(rem<=20){
-            rslt = `${hundreds[rank3]} ${twelweNumbers[rem-1]}`; 
-        }
-        // x21..x99
-        else{
-            let rank2 = Math.floor(mod_number%100/10) - 2;
-            if(number%10 == 0)
-                rslt = `${hundreds[rank3]} ${ten[rank2]}`;
-            else
-                rslt = `${hundreds[rank3]} ${ten[rank2]} ${twelweNumbers[number%10-1]}`;
-        } 
-    }
-    return number < 0 ? `минус ${rslt}` : rslt;
-}

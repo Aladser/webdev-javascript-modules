@@ -1,3 +1,4 @@
+/* modal-container */
 .modal-container {
   position: relative;
   background-color: #fefefe;
@@ -9,25 +10,17 @@
   animation-name: animatetop;
   animation-duration: 0.4s;
 }
-
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
-
 .modal-container__header {
   padding: 2px 16px;
   background-color: #23a843;
   color: white;
   text-decoration: none;
 }
-
 .modal-container__footer {
   padding: 2px 16px;
   background-color: #0182be;
   color: white;
 }
-
 .modal-container__body {padding: 10px 15px;}
 #start-game-frame .modal-container__body{
   display: flex;
@@ -37,6 +30,12 @@
 }
 .modal-container__body #messageField {text-align: center;}
 
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+/* цифровой блок */
 .modal-container__btn-block{
   display: flex;
   justify-content: center;
@@ -47,6 +46,7 @@
   width: 150px;
 }
 
+/* блок ввода */
 .modal-container__input-block{
   display: flex;
   justify-content: center;
@@ -56,6 +56,7 @@
   margin: 0px 10px;
   vertical-align:middle
 }
+
 /** кнопка Заново */
 .card-footer #btnRetry{
   width: 45%;
