@@ -30,8 +30,7 @@
   text-align: center;
 }
 
-/* кнопки модального окна ввода */
-.input-buttons{
+.modal-container__button-block{
   display: flex;
   justify-content: center;
   padding: 3px 5px;
@@ -40,13 +39,13 @@
   margin: 0px 5px;
   width: 150px;
 }
-/* inputs модального окна ввода */
-.modal-container__input{
+
+.modal-container__input-block{
 display: flex;
 justify-content: center;
 padding: 3px 5px;  
 }
-.modal-container__input label, input{
+.modal-container__input{
 margin: 0px 10px;
 vertical-align:middle
 }

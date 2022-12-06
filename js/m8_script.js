@@ -3,8 +3,8 @@ const inputGameFrame = document.querySelector('#input-numbers-frame'); // мод
 const startGameFrame = document.querySelector('#start-game-frame'); // модальное окно запуска игры
 
 const gameFrame = document.querySelector('.card'); // окно игры
-const minValueInput = inputGameFrame.querySelector('.modal-container__input').childNodes[1]; // поле минимального значения
-const maxValueInput = inputGameFrame.querySelector('.modal-container__input').childNodes[3]; // поле максимального значения
+const minValueInput = inputGameFrame.querySelector('.modal-container__input-block').childNodes[1]; // поле минимального значения
+const maxValueInput = inputGameFrame.querySelector('.modal-container__input-block').childNodes[3]; // поле максимального значения
 const orderNumberField = document.getElementById('orderNumberField'); // поле номера вопроса
 const answerField = document.getElementById('answerField'); // поле ответа
 
@@ -18,7 +18,7 @@ navContainer.style.display = 'none';
 let minValue, maxValue, minusK, orderNumber, gameRun;
 
 // кнопка получения минимального и максимального значений
-inputGameFrame.querySelector('.input-buttons').childNodes[1].addEventListener('click', function(){
+inputGameFrame.querySelector('.modal-container__button-block').childNodes[1].addEventListener('click', function(){
     if(minValueInput.value == '' || maxValueInput.value == '') return;     // проверка пустых полей
 
     maxValue = parseInt(maxValueInput.value, 10) || 100;
@@ -33,7 +33,7 @@ inputGameFrame.querySelector('.input-buttons').childNodes[1].addEventListener('c
     startGameFrame.style.display = "block";
 })
 // кнопка отмены игры
-inputGameFrame.querySelector('.input-buttons').childNodes[3].addEventListener('click', function(){
+inputGameFrame.querySelector('.modal-container__button-block').childNodes[3].addEventListener('click', function(){
     inputGameFrame.style.display = "none";
     gameFrame.style.display = "block";
     answerField.innerText = 'Начать игру?';
