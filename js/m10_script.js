@@ -1,16 +1,16 @@
-const itemsList = document.querySelector('.vegetable__list'); // список карточек
-const shuffleButton = document.querySelector('.shuffle__btn'); // кнопка перемешивания
-const filterButton = document.querySelector('.filter__btn'); // кнопка фильтрации
-const minWeightInput = document.querySelector(".minweight__input"); // поле минимального значения фмльтра
-const maxWeightInput = document.querySelector(".maxweight__input"); // поле максимального значения фильтра
-const sortKindLabel = document.querySelector('.sort__kind'); // поле с названием сортировки
-const sortTimeLabel = document.querySelector('.sort__time'); // поле с временем сортировки
+const itemsList = document.querySelector('.vegetable__list');          // список карточек
+const shuffleButton = document.querySelector('.shuffle__btn');         // кнопка перемешивания
+const filterButton = document.querySelector('.filter__btn');           // кнопка фильтрации
+const minWeightInput = document.querySelector(".minweight__input");    // поле минимального значения фмльтра
+const maxWeightInput = document.querySelector(".maxweight__input");    // поле максимального значения фильтра
+const sortKindLabel = document.querySelector('.sort__kind');           // поле с названием сортировки
+const sortTimeLabel = document.querySelector('.sort__time');           // поле с временем сортировки
 const sortChangeButton = document.querySelector('.sort__change__btn'); // кнопка смены сортировки
 const sortActionButton = document.querySelector('.sort__action__btn'); // кнопка сортировки
-const kindInput = document.querySelector('.kind__input'); // поле с названием вида
-const colorInput = document.querySelector('#color__input'); // поле с названием цвета
-const weightInput = document.querySelector('.weight__input'); // поле с весом
-const addActionButton = document.querySelector('.add__action__btn'); // кнопка добавления
+const kindInput = document.querySelector('.kind__input');              // поле с названием вида
+const colorInput = document.querySelector('#color__input');            // поле с названием цвета
+const weightInput = document.querySelector('.weight__input');          // поле с весом
+const addActionButton = document.querySelector('.add__action__btn');   // кнопка добавления
 
 // цвета
 let colors = [
@@ -36,7 +36,7 @@ colors.forEach((color)=>{
   colorInput.appendChild(option);
 });
 colorInput.selectedIndex = 8;
-colorInput.addEventListener('change',function(){this.style.backgroundColor = colors[this.selectedIndex].value;}) // изменение цвета select
+colorInput.addEventListener('change',function(){this.style.backgroundColor = colors[this.selectedIndex].value;}) // изменение цвета заголовка select
 
 // список овощей
 let vegetablesJSON = `[
@@ -64,7 +64,7 @@ function showError(elem){
 }
 
 /**   ОТОБРАЖЕНИЕ   **/
-/** добавить карточку овоща в vegetabls__list */
+/** добавить карточку овоща в vegetables__list */
 function addElement(item){
   let liElem = document.createElement('li'); // LI .vegetable__item
   liElem.className = "vegetable__item";
@@ -117,8 +117,8 @@ maxWeightInput.addEventListener('click', () => maxWeightInput.value = '');
 
 // фильтрация массива
 function filter(){
-  minWeightInput.value = parseInt(minWeightInput.value, 10);
-  maxWeightInput.value = parseInt(maxWeightInput.value, 10);
+  minWeightInput.value = parseInt(minWeightInput.value);
+  maxWeightInput.value = parseInt(maxWeightInput.value);
 
   if(isNaN(minWeightInput.value)){
     showError(minWeightInput);
