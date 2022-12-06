@@ -10,6 +10,11 @@
   animation-duration: 0.4s;
 }
 
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
 .modal-container__header {
   padding: 2px 16px;
   background-color: #23a843;
@@ -23,12 +28,14 @@
   color: white;
 }
 
-.modal-container__body{
-  padding: 10px 15px;
+.modal-container__body {padding: 10px 15px;}
+#start-game-frame .modal-container__body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.modal-container__body #messageField{
-  text-align: center;
-}
+.modal-container__body #messageField {text-align: center;}
 
 .modal-container__button-block{
   display: flex;
@@ -50,22 +57,10 @@ margin: 0px 10px;
 vertical-align:middle
 }
 
-/* Анимация */
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
-}
 
-#start-game-frame .modal-container__body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 #start-game-btn{
   width: 100px;
 }
-
 /* Кнопка Заново окна игры */
 .btn-link{
   width: 45%;
