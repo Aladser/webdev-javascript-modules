@@ -1,19 +1,11 @@
-body{
-    margin-top: 10px;
-}
+body{margin-top: 10px;}
 /* поля вывода данных */
-.data-row{
-    display: flex;
-    padding: 5px;
-}
-.data-label{
-    display: flex;
-    justify-content:left;
+.card-body__row{display: flex;}
+.card-body__title{
     align-items: center;
     width: 25%;
-    padding-left: 5px;
 }
-.data-output{
+.card-body__output{
     display: flex;
     justify-content:center;
     align-items: center;
@@ -29,23 +21,22 @@ body{
     font-weight: bolder;
 }
 /* поле кнопок */
-#col-btn{
+.card-footer{
     padding: 18px 0px;
     border: 1px solid rgb(222, 222, 222);
     background-color: rgb(247, 247, 247);
 }
-/* кнопки */
-#col-btn input{
+.card-footer__button{
     width: 30%;
     padding: 5px 20px;
     margin: 0px 5px;
     border: 1px solid rgb(222, 222, 222);
     background-color: white;
 }
-#col-btn input:hover{
+.card-footer__button:hover{
     color: rgb(222, 222, 222);
 }
-#col-btn input:active{
+.card-footer__button:active{
     border: 1px solid black;
     color: black;
 }

@@ -18,29 +18,32 @@
                 <div class="card text-center">
                     <div class="card-header"><p class="m-0">Окно результатов генерации</p> </div>
                     <div class="card-body">
-                                <div class="data-row">
-                                    <div class="data-label">Фамилия:</div><div class="data-output" id="surnameOutput">ФамилияШаблон</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label">Имя Отчество:</div><div class="data-output" id="nameOutput">ИмяШаблон</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label"></div><div class="data-output" id="genderAndDateOutput">ПолШаблон</div>
-                                </div>
-                                <div class="data-row">
-                                    <div class="data-label"></div><div class="data-output" id="profession">ПрофессияШаблон</div>
-                                </div>                            
+                        <div class="card-body__row">
+                            <div class="card-body__title">Фамилия:</div>
+                            <div class="card-body__output" id="surnameOutput">ФамилияШаблон</div>
+                        </div>
+                        <div class="card-body__row">
+                            <div class="card-body__title">Имя Отчество:</div>
+                            <div class="card-body__output" id="nameOutput">ИмяШаблон</div>
+                        </div>
+                        <div class="card-body__row">
+                            <div class="card-body__title"></div>
+                            <div class="card-body__output" id="genderAndDateOutput">ПолШаблон</div>
+                        </div>
+                        <div class="card-body__row">
+                            <div class="card-body__title"></div>
+                            <div class="card-body__output" id="profession">ПрофессияШаблон</div>
+                        </div>                            
                     </div>
-                    <div id="col-btn">
-                        <input type="button" value="Обновить" id="updateData">
-                        <input type="button" value="Очистить" id="clearData">
+                    <div class="card-footer">
+                        <input type="button" class="card-footer__button" id="updateData" value="Обновить">
+                        <input type="button" class="card-footer__button" id="clearData" value="Очистить">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<script src="../js/personGenerator.js"></script>
-<script src="../js/m9_script.js"></script>
-<script src="../js/navigation.js"></script>
+    <script src="../js/personGenerator.js"></script>
+    <script src="../js/m9_script.js"></script>
 </body>
 </html>
