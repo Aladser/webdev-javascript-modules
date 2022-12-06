@@ -1,5 +1,7 @@
+const navContainer = document.querySelector('.header-navigation');
 const inputGameFrame = document.querySelector('#input-numbers-frame'); // модальное окно ввода данных
 const startGameFrame = document.querySelector('#start-game-frame'); // модальное окно запуска игры
+
 const gameFrame = document.querySelector('.card'); // окно игры
 const minValueInput = inputGameFrame.querySelector('.modal-container__input').childNodes[1]; // поле минимального значения
 const maxValueInput = inputGameFrame.querySelector('.modal-container__input').childNodes[3]; // поле максимального значения
@@ -8,8 +10,10 @@ const answerField = document.getElementById('answerField'); // поле отве
 
 minValueInput.addEventListener('focus', function(){this.value = ''}) // очистка поля при фокусе
 maxValueInput.addEventListener('focus', function(){this.value = ''}) // очистка поля при фокусе
-inputGameFrame.style.display = "block";
-gameFrame.style.display = "none";
+
+inputGameFrame.style.display = 'block';
+gameFrame.style.display = 'none';
+navContainer.style.display = 'none';
 
 let minValue, maxValue, minusK, orderNumber, gameRun;
 
@@ -24,7 +28,7 @@ inputGameFrame.querySelector('.input-buttons').childNodes[1].addEventListener('c
     // поправочный коэффициент. Если область поиска включает отрицательные числа, то область поиска переносится на [0:..]
     minusK = minValue < 0 ? -1 * minValue : 0;
 
-    startGameFrame.querySelector('p').innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
+    startGameFrame.querySelector('#messageField').innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
     inputGameFrame.style.display = "none";
     startGameFrame.style.display = "block";
 })

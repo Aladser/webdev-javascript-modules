@@ -1,4 +1,3 @@
-/* Модальный контейнер */
 .modal-container {
   position: relative;
   background-color: #fefefe;
@@ -11,28 +10,24 @@
   animation-duration: 0.4s;
 }
 
-/* Модальный заголовок */
 .modal-container__header {
   padding: 2px 16px;
   background-color: #23a843;
   color: white;
   text-decoration: none;
 }
-/* Модальный footer */
+
 .modal-container__footer {
   padding: 2px 16px;
   background-color: #0182be;
   color: white;
 }
-/* Модальное body */
-.modal-container__body {
+
+.modal-container__body{
   padding: 10px 15px;
 }
-.modal-container__body p{
+.modal-container__body #messageField{
   text-align: center;
-}
-.modal-container__body div{
-  padding: 5px 0px;
 }
 
 /* кнопки модального окна ввода */
@@ -41,7 +36,7 @@
   justify-content: center;
   padding: 3px 5px;
 }
-.input-buttons input{
+.modal-container__button{
   margin: 0px 5px;
   width: 150px;
 }
