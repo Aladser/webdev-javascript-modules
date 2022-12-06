@@ -37,32 +37,27 @@
 }
 .modal-container__body #messageField {text-align: center;}
 
-.modal-container__button-block{
+.modal-container__btn-block{
   display: flex;
   justify-content: center;
   padding: 3px 5px;
 }
-.modal-container__button{
+.modal-container__btn{
   margin: 0px 5px;
   width: 150px;
 }
 
 .modal-container__input-block{
-display: flex;
-justify-content: center;
-padding: 3px 5px;  
+  display: flex;
+  justify-content: center;
+  padding: 3px 5px;  
 }
 .modal-container__input{
-margin: 0px 10px;
-vertical-align:middle
+  margin: 0px 10px;
+  vertical-align:middle
 }
-
-
-#start-game-btn{
-  width: 100px;
-}
-/* Кнопка Заново окна игры */
-.btn-link{
+/** кнопка Заново */
+.card-footer #btnRetry{
   width: 45%;
   height: 100%;
   background-color: #23a843;
@@ -70,7 +65,7 @@ vertical-align:middle
   font-weight:400;
   font-size: 19px;
 }
-.btn-link:hover{
+.card-footer #btnRetry:hover{
   text-decoration: none;
   color: white;
   background-color: #1d8636;

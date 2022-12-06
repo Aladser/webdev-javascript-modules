@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-link" id="btnRetry"> Заново</button>
+                        <button class="btn" id="btnRetry"> Заново</button>
                     </div>
                 </div>
             </div>
@@ -48,12 +48,12 @@
                 <div class="modal-container__body">
                     <form action="">
                         <div class="modal-container__input-block">
-                            Минимальное число  <input type="text" class="modal-container__input" value='-100'>
-                            Максимальное число <input type="text" class="modal-container__input" value="100">
+                            Минимальное число  <input type="text" class="modal-container__input" id="minWeightInput" value='-100'>
+                            Максимальное число <input type="text" class="modal-container__input" id="maxWeightInput" value="100">
                         </div>
-                        <div class="modal-container__button-block">
-                            <input type="button" class="modal-container__button" value='Ввести'>
-                            <input type="button" class="modal-container__button" value='Отмена'>
+                        <div class="modal-container__btn-block">
+                            <input type="button" class="modal-container__btn" id="getNumbersBtn" value='Ввести'>
+                            <input type="button" class="modal-container__btn" id="cancelBtn" value='Отмена'>
                         </div>
                     </form>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="modal-container__header"><h2> Угадай число </h2> </div>
                 <div class="modal-container__body">
                     <p id="messageField">Тест</p>
-                    <input type="button" class="modal-container__button" value='Играть!'>
+                    <input type="button" class="modal-container__button" id="playBtn" value='Играть!'>
                 </div>
                 <div class="modal-container__footer"></div>
             </div>

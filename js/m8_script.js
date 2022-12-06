@@ -1,62 +1,60 @@
-const navContainer = document.querySelector('.header-navigation');
+const navContainer = document.querySelector('.header-navigation');     // блок навигации
 const inputGameFrame = document.querySelector('#input-numbers-frame'); // модальное окно ввода данных
-const startGameFrame = document.querySelector('#start-game-frame'); // модальное окно запуска игры
+const startGameFrame = document.querySelector('#start-game-frame');    // модальное окно запуска игры
 
-const gameFrame = document.querySelector('.card'); // окно игры
-const minValueInput = inputGameFrame.querySelector('.modal-container__input-block').childNodes[1]; // поле минимального значения
-const maxValueInput = inputGameFrame.querySelector('.modal-container__input-block').childNodes[3]; // поле максимального значения
-const orderNumberField = document.getElementById('orderNumberField'); // поле номера вопроса
-const answerField = document.getElementById('answerField'); // поле ответа
+const gameFrame = document.querySelector('.game-card');                // окно игры
+const minValueInput = inputGameFrame.querySelector('#minWeightInput'); // поле минимального значения
+const maxValueInput = inputGameFrame.querySelector('#maxWeightInput'); // поле максимального значения
+const orderNumberField = document.querySelector('#orderNumberField');  // поле номера вопроса
+const answerField = document.querySelector('#answerField');            // поле ответа
 
-minValueInput.addEventListener('focus', function(){this.value = ''}) // очистка поля при фокусе
-maxValueInput.addEventListener('focus', function(){this.value = ''}) // очистка поля при фокусе
-
-inputGameFrame.style.display = 'block';
-gameFrame.style.display = 'none';
-navContainer.style.display = 'none';
+// очистка поля при фокусе
+minValueInput.addEventListener('focus', function(){this.value = ''});
+maxValueInput.addEventListener('focus', function(){this.value = ''});
 
 let minValue, maxValue, minusK, orderNumber, gameRun;
 
-// кнопка получения минимального и максимального значений
-inputGameFrame.querySelector('.modal-container__button-block').childNodes[1].addEventListener('click', function(){
-    if(minValueInput.value == '' || maxValueInput.value == '') return;     // проверка пустых полей
+/** показывает окно _window*/
+function showWindow(_window){
+    [navContainer, inputGameFrame, startGameFrame, gameFrame].forEach(elem => elem.style.display = 'none');
+    _window.style.display = 'block';
+}
+showWindow(inputGameFrame);
 
-    maxValue = parseInt(maxValueInput.value, 10) || 100;
+// кнопка Ввести inputGameFrame
+inputGameFrame.querySelector('#getNumbersBtn').addEventListener('click', function(){
+    maxValue = parseInt(maxValueInput.value) || 100;
     maxValue = maxValue>999 ? 999 : maxValue;
-    minValue = parseInt(minValueInput.value, 10) || -100;
+    minValue = parseInt(minValueInput.value) || -100;
     minValue = minValue<-999 ? -999 : minValue;
+
     // поправочный коэффициент. Если область поиска включает отрицательные числа, то область поиска переносится на [0:..]
     minusK = minValue < 0 ? -1 * minValue : 0;
 
-    startGameFrame.querySelector('#messageField').innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
-    inputGameFrame.style.display = "none";
-    startGameFrame.style.display = "block";
+    startGameFrame.querySelector('#messageField').textContent = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
+    showWindow(startGameFrame);
 })
-// кнопка отмены игры
-inputGameFrame.querySelector('.modal-container__button-block').childNodes[3].addEventListener('click', function(){
-    inputGameFrame.style.display = "none";
-    gameFrame.style.display = "block";
-    answerField.innerText = 'Начать игру?';
-    
+// кнопка Отмена inputGameFrame
+inputGameFrame.querySelector('#cancelBtn').addEventListener('click', function(){
     gameRun = false;
+
+    answerField.textContent = 'Начать игру?';
+    showWindow(gameFrame);
 })
-// кнопка запуска игры
-startGameFrame.querySelector('input[type=button]').addEventListener('click', function(){
+// кнопка Играть! startGameFrame
+startGameFrame.querySelector('#playBtn').addEventListener('click', function(){
+    gameRun = true;
+
     orderNumber = 1; 
     answerNumber  = minValue + Math.round(Math.random()*(maxValue-minValue)); // предположенное число
 
-    startGameFrame.style.display = 'none';
-    gameFrame.style.display = 'block';
-    orderNumberField.innerText = orderNumber;
-    answerField.innerText = `Вы загадали число ${answerNumber}?`;
-    
-    gameRun = true;
+    orderNumberField.textContent = orderNumber;
+    answerField.textContent = `Вы загадали число ${answerNumber}?`;
+    showWindow(gameFrame);
 })
+
 // кнопка заново
-document.querySelector('#btnRetry').addEventListener('click', function () {
-    gameFrame.style.display = "none";
-    inputGameFrame.style.display = "block";   
-})
+document.querySelector('#btnRetry').addEventListener('click', () => showWindow(inputGameFrame));  
 
 // Обработчик кнопок Меньше и Больше
 function reduceSearchField(arrow){
