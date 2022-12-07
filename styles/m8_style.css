@@ -11,10 +11,10 @@
   animation-duration: 0.4s;
 }
 .modal-container-header {
-  padding: 2px 16px;
+  padding: 10px 0px;
   background-color: #23a843;
   color: white;
-  text-decoration: none;
+  text-align: center;
 }
 .modal-container-footer {
   padding: 2px 16px;
