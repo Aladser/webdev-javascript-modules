@@ -30,46 +30,46 @@
                     <div class="card-body">
                         <div class="btn-group">
                             <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
-                            <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
+                            <button class="btn btn-success">Верно!</button>
                             <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn" id="btnRetry"> Заново</button>
+                        <button class="btn btn-retry"> Заново</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Модальное окно ввода чисел -->
-        <section class="modal" id="input-numbers-frame">
+        <section class="modal input-numbers-window">
             <div class="modal-container">
-                <div class="modal-container__header"><h2> Угадай число </h2> </div>
-                <div class="modal-container__body">
+                <div class="modal-container-header"><h2> Угадай число </h2> </div>
+                <div class="modal-container-body">
                     <form action="">
-                        <div class="modal-container__input-block">
-                            Минимальное число  <input type="text" class="modal-container__input" id="minWeightInput" value='-100'>
-                            Максимальное число <input type="text" class="modal-container__input" id="maxWeightInput" value="100">
+                        <div class="input-container">
+                            Минимальное число  <input type="text" class="input-container__input" id="minWeightInput" value='-100'>
+                            Максимальное число <input type="text" class="input-container__input" id="maxWeightInput" value="100">
                         </div>
-                        <div class="modal-container__btn-block">
-                            <input type="button" class="modal-container__btn" id="getNumbersBtn" value='Ввести'>
-                            <input type="button" class="modal-container__btn" id="cancelBtn" value='Отмена'>
+                        <div class="btn-container">
+                            <input type="button" class="modal-container-body__btn" id="getNumbersBtn" value='Ввести'>
+                            <input type="button" class="modal-container-body__btn" id="cancelBtn" value='Отмена'>
                         </div>
                     </form>
                 </div>
-                <div class="modal-container__footer"></div>
+                <div class="modal-container-footer"></div>
             </div>
         </section>
         
         <!-- Модальное окно запуска игры -->
-        <section class="modal" id="start-game-frame">
+        <section class="modal start-game-window">
             <div class="modal-container">
-                <div class="modal-container__header"><h2> Угадай число </h2> </div>
-                <div class="modal-container__body">
-                    <p id="messageField">Тест</p>
-                    <input type="button" class="modal-container__btn" id="playBtn" value='Играть!'>
+                <div class="modal-container-header"><h2> Угадай число </h2> </div>
+                <div class="modal-container-body">
+                    <p class="message-field">Тест</p>
+                    <input type="button" class="modal-container-body__btn" id="playBtn" value='Играть!'>
                 </div>
-                <div class="modal-container__footer"></div>
+                <div class="modal-container-footer"></div>
             </div>
         </section>
 

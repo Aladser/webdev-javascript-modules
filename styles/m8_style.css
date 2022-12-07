@@ -10,63 +10,61 @@
   animation-name: animatetop;
   animation-duration: 0.4s;
 }
-.modal-container__header {
+.modal-container-header {
   padding: 2px 16px;
   background-color: #23a843;
   color: white;
   text-decoration: none;
 }
-.modal-container__footer {
+.modal-container-footer {
   padding: 2px 16px;
   background-color: #0182be;
   color: white;
 }
-.modal-container__body {padding: 10px 15px;}
-#start-game-frame .modal-container__body{
+.modal-container-body {padding: 10px 15px;}
+.start-game-window .modal-container-body{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.modal-container__body #messageField {text-align: center;}
 
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
 }
 
-/* цифровой блок */
-.modal-container__btn-block{
+.btn-container{
   display: flex;
   justify-content: center;
   padding: 3px 5px;
 }
-.modal-container__btn{
+
+.modal-container-body__btn{
   margin: 0px 5px;
   width: 150px;
 }
 
-/* блок ввода */
-.modal-container__input-block{
+.input-container{
   display: flex;
   justify-content: center;
   padding: 3px 5px;  
 }
-.modal-container__input{
+.input-container__input{
   margin: 0px 10px;
   vertical-align:middle
 }
 
 /** кнопка Заново */
-.card-footer #btnRetry{
-  width: 45%;
+.btn-retry{
+  width: 42%;
   height: 100%;
   background-color: #23a843;
   color: white;
   font-weight:400;
   font-size: 19px;
 }
-.card-footer #btnRetry:hover{
+.btn-retry:hover{
   text-decoration: none;
   color: white;
   background-color: #1d8636;

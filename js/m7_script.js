@@ -1,4 +1,4 @@
-const inputWindow = document.querySelector('.calculator-container__input');
+const inputWindow = document.querySelector('.output-container');
 document.querySelectorAll('.btn-digit').forEach(button => button.addEventListener('click', press_digit));
 document.querySelectorAll('.btn-oprt').forEach(button => button.addEventListener('click', run_operation));
 /** текущая операция */
@@ -10,14 +10,14 @@ let first_number = null;
 /** индекс второго числа */
 let position = null;
 
-// -------Кнопка сброса-------
+// -------кнопка Сброс-------
 document.querySelector('.btn-clear').addEventListener('click', function () {
     operation = null;
     position = null;
     inputWindow.textContent = '';
 })
 
-// -------Кнопка равно------- 
+// -------кнопка Равно------- 
 document.querySelector('.btn-equal').addEventListener('click', function () {
     // игнорирование пустого поля, арифм.знака
     if (operation!='input' && operation!=null && !isNaN(last_sign)){
@@ -27,7 +27,7 @@ document.querySelector('.btn-equal').addEventListener('click', function () {
     }
 })
 
-// ------ точка -------
+// ------ кнопка Точка -------
 document.querySelector('.btn-dot').addEventListener('click', function(){
     // игнор пустой строки и последней не цифры
     if(inputWindow.textContent != '' && !isNaN(last_sign)){
@@ -47,8 +47,9 @@ document.querySelector('.btn-dot').addEventListener('click', function(){
     }
 })
 
-/** найти индекс знака арифм.операции                                                           
- *  "-1" - знак не найден
+/** найти индекс знака арифметической операции
+ *                                                          
+ *  -1: не найдено
 */
 function getAriphOperationIndex(){
     let str = inputWindow.textContent.split('');
@@ -56,14 +57,14 @@ function getAriphOperationIndex(){
     return ariphSign.length==0 ? -1 : str.indexOf(ariphSign[0]); 
 }
 
-// -------ввод цифры--------
+/** ввести цифру */
 function press_digit(){
     inputWindow.textContent = operation==null ? this.textContent : inputWindow.textContent + this.textContent;
     operation = operation==null ? 'input' : operation;  
     last_sign = parseInt(this.textContent);
 }
 
-// -------кнопки + - */-------
+/** выполнить арифметическую операцию */
 function calc(operation, first_number, second_number){
     let rslt;
     switch(operation){
@@ -83,7 +84,7 @@ function calc(operation, first_number, second_number){
     return roundNumber(rslt, 6);
 }
 
-/** Ввод знака арифметической операции*/
+/** ввести знак арифметической операции*/
 function run_operation(){
     // игнор пустого поля 
     if (inputWindow.textContent != ''){
@@ -129,7 +130,7 @@ document.querySelector('.btn-sqrt').addEventListener('click', function () {
             let lastSignIndex = inputWindow.textContent.length-1;
             x = inputWindow.textContent.slice(0, lastSignIndex);
         }
-        
+
         if(x >= 0){
             inputWindow.textContent = roundNumber(Math.sqrt(x), 6);
             operation = null;
@@ -138,7 +139,7 @@ document.querySelector('.btn-sqrt').addEventListener('click', function () {
     }
 })
 
-// ------- округление числа -------
+/** округлить число */
 function roundNumber(number, remValue=3){
     if(number != parseInt(number)){
         let remSize = String(number).split('.')[1].length; // длина остатка

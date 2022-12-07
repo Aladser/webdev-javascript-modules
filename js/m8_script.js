@@ -1,6 +1,6 @@
 const navContainer = document.querySelector('.header-navigation');     // блок навигации
-const inputGameFrame = document.querySelector('#input-numbers-frame'); // модальное окно ввода данных
-const startGameFrame = document.querySelector('#start-game-frame');    // модальное окно запуска игры
+const inputGameFrame = document.querySelector('.input-numbers-window'); // модальное окно ввода данных
+const startGameFrame = document.querySelector('.start-game-window');    // модальное окно запуска игры
 
 const gameFrame = document.querySelector('.game-card');                // окно игры
 const minValueInput = inputGameFrame.querySelector('#minWeightInput'); // поле минимального значения
@@ -31,7 +31,7 @@ inputGameFrame.querySelector('#getNumbersBtn').addEventListener('click', functio
     // поправочный коэффициент. Если область поиска включает отрицательные числа, то область поиска переносится на [0:..]
     minusK = minValue < 0 ? -1 * minValue : 0;
 
-    startGameFrame.querySelector('#messageField').textContent = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
+    startGameFrame.querySelector('.message-field').textContent = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
     showWindow(startGameFrame);
 })
 // кнопка Отмена inputGameFrame
@@ -54,7 +54,7 @@ startGameFrame.querySelector('#playBtn').addEventListener('click', function(){
 })
 
 // кнопка заново
-document.querySelector('#btnRetry').addEventListener('click', () => showWindow(inputGameFrame));  
+document.querySelector('.btn-retry').addEventListener('click', () => showWindow(inputGameFrame));  
 
 // Обработчик кнопок Меньше и Больше
 function reduceSearchField(arrow){
@@ -87,7 +87,7 @@ function reduceSearchField(arrow){
 gameFrame.querySelector('#btnLess').addEventListener('click', () => reduceSearchField('<')); // кнопка меньше
 gameFrame.querySelector('#btnOver').addEventListener('click', () => reduceSearchField('>')); // кнопка больше
 // кнопка Равно
-gameFrame.querySelector('#btnEqual').addEventListener('click', function () {
+gameFrame.querySelector('.btn-success').addEventListener('click', function () {
     if (gameRun){
         let сongratulations = ['Красавчик!\u{1F60A}','Так держать!\u{1F44C}','Дай пять!\u{1F590}','Молодец! Сыграем еще?\u{1F60F}','Это было легко.\u{1F611}'];
         answerField.innerText =  сongratulations[Math.round(Math.random()*4)];
