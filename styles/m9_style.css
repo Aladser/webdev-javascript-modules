@@ -1,26 +1,9 @@
 body{margin-top: 10px;}
-/* поля вывода данных */
-.row{display: flex;}
-.row__title{
-    align-items: center;
-    width: 25%;
+
+.card{
+    text-align: center;
 }
-.row__output{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    width: 75%;
-    padding-left: 5px;
-}
-#surnameOutput{
-    font-size: 30px;
-    font-weight: bolder;
-}
-#nameOutput{
-    font-size: 20px;
-    font-weight: bolder;
-}
-/* поле кнопок */
+
 .card-footer{
     padding: 18px 0px;
     border: 1px solid rgb(222, 222, 222);
@@ -39,4 +22,29 @@ body{margin-top: 10px;}
 .card-footer__btn:active{
     border: 1px solid black;
     color: black;
+}
+.card-row{
+    display: flex;
+    height: 40px;
+}
+.card-row__title{
+    display: flex;
+    align-items: center;
+    width: 25%;
+    padding-left: 5px;
+}
+.card-row-output{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 75%;
+    padding-left: 5px;
+}
+.card-row-output__surname{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.card-row-output__name{
+    font-size: 20px;
+    font-weight: bolder;
 }
