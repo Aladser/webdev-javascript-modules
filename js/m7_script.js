@@ -1,4 +1,4 @@
-const inputWindow = document.querySelector('.output-container');
+const inputWindow = document.querySelector('.output-field');
 document.querySelectorAll('.btn-digit').forEach(button => button.addEventListener('click', press_digit));
 document.querySelectorAll('.btn-oprt').forEach(button => button.addEventListener('click', run_operation));
 /** текущая операция */
