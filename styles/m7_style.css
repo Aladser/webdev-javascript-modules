@@ -42,7 +42,7 @@ body{
     height: 50px;
 }
 
-.calculator-container__button{
+.btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@ body{
     font-weight: bolder;
     font-family: Roboto;
 }
-.calculator-container__button:hover{
+.btn:hover{
     color: white;
     background-color: green;
 }

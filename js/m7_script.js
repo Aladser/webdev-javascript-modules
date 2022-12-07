@@ -1,6 +1,6 @@
 const inputWindow = document.querySelector('.calculator-container__input');
-document.querySelectorAll('.calculator-container__digit-btn').forEach(button => button.addEventListener('click', press_digit));
-document.querySelectorAll('.calculator-container__oprt-btn').forEach(button => button.addEventListener('click', run_operation));
+document.querySelectorAll('.btn-digit').forEach(button => button.addEventListener('click', press_digit));
+document.querySelectorAll('.btn-oprt').forEach(button => button.addEventListener('click', run_operation));
 /** текущая операция */
 let operation = null;
 /** последний введенный символ */
@@ -11,14 +11,14 @@ let first_number = null;
 let position = null;
 
 // -------Кнопка сброса-------
-document.querySelector('.calculator-container__button-clear').addEventListener('click', function () {
+document.querySelector('.btn-clear').addEventListener('click', function () {
     operation = null;
     position = null;
     inputWindow.textContent = '';
 })
 
 // -------Кнопка равно------- 
-document.querySelector('.calculator-container__button-equals').addEventListener('click', function () {
+document.querySelector('.btn-equal').addEventListener('click', function () {
     // игнорирование пустого поля, арифм.знака
     if (operation!='input' && operation!=null && !isNaN(last_sign)){
         let second_number = inputWindow.textContent.slice(position);
@@ -28,7 +28,7 @@ document.querySelector('.calculator-container__button-equals').addEventListener(
 })
 
 // ------ точка -------
-document.querySelector('.calculator-container__dot-btn').addEventListener('click', function(){
+document.querySelector('.btn-dot').addEventListener('click', function(){
     // игнор пустой строки и последней не цифры
     if(inputWindow.textContent != '' && !isNaN(last_sign)){
         // если нет точки
@@ -114,7 +114,7 @@ function run_operation(){
 }
 
 // -------квадратный корень-------
-document.querySelector('.calculator-container__btn-sqrt').addEventListener('click', function () {
+document.querySelector('.btn-sqrt').addEventListener('click', function () {
     // игнорирование пустой строки
     if( inputWindow.textContent != '' ){
         // последний знак - число
@@ -129,9 +129,12 @@ document.querySelector('.calculator-container__btn-sqrt').addEventListener('clic
             let lastSignIndex = inputWindow.textContent.length-1;
             x = inputWindow.textContent.slice(0, lastSignIndex);
         }
-        inputWindow.textContent = roundNumber(Math.sqrt(x), 6);
-        operation = null;
-        last_sign = inputWindow.textContent[inputWindow.textContent.length-1];
+        
+        if(x >= 0){
+            inputWindow.textContent = roundNumber(Math.sqrt(x), 6);
+            operation = null;
+            last_sign = inputWindow.textContent[inputWindow.textContent.length-1];
+        }
     }
 })
 

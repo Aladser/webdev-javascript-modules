@@ -1,5 +1,5 @@
 /* светофор */
-.traffic-light-device{
+.device{
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -11,7 +11,7 @@
   background-color: grey;
 }
 /* сигнал светофора */
-.traffic-light-device__signal{
+.signal{
     width: 150px;
     height: 150px;
     border-radius: 50%;

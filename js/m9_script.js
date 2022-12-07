@@ -1,4 +1,9 @@
-/** isNewData: true - генерирует новые данные, false - очищает поля*/
+/** isNewData
+ * 
+ * true - генерирует новые данные, 
+ * 
+ * false - очищает поля
+ */
 function createData(isNewData){
     const person = isNewData ? personGenerator.getPerson() : null;
     document.querySelector('#nameOutput').innerText = isNewData ? person.name : '';
