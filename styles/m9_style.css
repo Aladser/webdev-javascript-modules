@@ -1,11 +1,11 @@
 body{margin-top: 10px;}
 /* поля вывода данных */
-.card-body__row{display: flex;}
-.card-body__title{
+.row{display: flex;}
+.row__title{
     align-items: center;
     width: 25%;
 }
-.card-body__output{
+.row__output{
     display: flex;
     justify-content:center;
     align-items: center;
@@ -26,17 +26,17 @@ body{margin-top: 10px;}
     border: 1px solid rgb(222, 222, 222);
     background-color: rgb(247, 247, 247);
 }
-.card-footer__button{
+.card-footer__btn{
     width: 30%;
     padding: 5px 20px;
     margin: 0px 5px;
     border: 1px solid rgb(222, 222, 222);
     background-color: white;
 }
-.card-footer__button:hover{
+.card-footer__btn:hover{
     color: rgb(222, 222, 222);
 }
-.card-footer__button:active{
+.card-footer__btn:active{
     border: 1px solid black;
     color: black;
 }

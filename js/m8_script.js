@@ -15,9 +15,11 @@ maxValueInput.addEventListener('focus', function(){this.value = ''});
 let minValue, maxValue, minusK, orderNumber, gameRun;
 
 /** показывает окно _window*/
-function showWindow(_window){
-    [navContainer, inputGameFrame, startGameFrame, gameFrame].forEach(elem => elem.style.display = 'none');
-    _window.style.display = 'block';
+function showWindow(elem){
+    let windows = [navContainer, inputGameFrame, startGameFrame, gameFrame]; 
+    windows.forEach(elem => elem.style.display = 'none');
+    elem.style.display = 'block';
+    if(windows.indexOf(elem) == 3) navContainer.style.display = 'flex';
 }
 showWindow(inputGameFrame);
 
