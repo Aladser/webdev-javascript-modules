@@ -6,8 +6,8 @@
  */
 function createData(isNewData){
     const person = isNewData ? personGenerator.getPerson() : null;
-    document.querySelector('.card-row-output__name').innerText = isNewData ? person.name : '';
-    document.querySelector('.card-row-output__surname').innerHTML = isNewData ? person.surname : '';
+    document.querySelector('.card-row__data-name').innerText = isNewData ? person.name : '';
+    document.querySelector('.card-row__data-surname').innerHTML = isNewData ? person.surname : '';
     document.querySelector('#genderAndDateOutput').innerHTML = isNewData ? `${person.gender} ${person.dateOfBirth}`: '';
     document.querySelector('#profession').innerHTML = isNewData ? person.profession: '';
 }

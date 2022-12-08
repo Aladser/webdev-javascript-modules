@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Генератор случайных пользователей</title>
-    <link rel="shortcut icon" href="../resources/icon.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/m9_style.css">
-    <link rel="stylesheet" href="../styles/gen_style.css">
-</head>
-<body>
-    <script src="../js/header-navigation.js"></script>
-    <div class="container">
-        <div class="row game-card align-items-center">
-            <div class="col col-md-6 offset-md-3">
-                <div class="card text-center">
-                    <div class="card-header"><p class="m-0">Окно результатов генерации</p> </div>
-                    <div class="card-body">
-                        <div class="card-row">
-                            <div class="card-row-title-col"><p class="card-row-title-col__title">Фамилия:</p></div>
-                            <div class="card-row-output card-row-output__surname">ФамилияШаблон</div>
-                        </div>
-                        <div class="card-row">
-                            <div class="card-row-title-col"><p class="card-row-title-col__title">Имя Отчество:</p></div>
-                            <div class="card-row-output card-row-output__name">ИмяШаблон</div>
-                        </div>
-                        <div class="card-row">
-                            <div class="card-row-title-col"></div>
-                            <div class="card-row-output" id="genderAndDateOutput">ПолШаблон</div>
-                        </div>
-                        <div class="card-row">
-                            <div class="card-row-title-col"></div>
-                            <div class="card-row-output" id="profession">ПрофессияШаблон</div>
-                        </div>                            
-                    </div>
-                    <div class="card-footer">
-                        <input type="button" class="card-footer__btn" id="updateData" value="Обновить">
-                        <input type="button" class="card-footer__btn" id="clearData" value="Очистить">
-                    </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Генератор случайных пользователей</title>
+        <link rel="shortcut icon" href="../resources/icon.ico">
+        <link rel="stylesheet" href="../styles/gen_style.css">
+        <link rel="stylesheet" href="../styles/m9_style.css">
+    </head>
+    <body>
+        <header>
+            <script src="../js/header-navigation.js"></script>
+        </header>
+        <main>
+        <section class="card">
+            <p class="card-header">Окно результатов генерации</p>
+            <div class="card-body">
+                <div class="card-row">
+                    <div class="card-row__title">Фамилия:</div>
+                    <div class="card-row__data card-row__data-surname">ФамилияШаблон</div>
                 </div>
+                <div class="card-row">
+                    <div class="card-row__title">Имя Отчество:</div>
+                    <div class="card-row__data card-row__data-name">ИмяШаблон</div>
+                </div>
+                <div class="card-row">
+                    <div class="card-row__title"></div>
+                    <div class="card-row__data" id="genderAndDateOutput">ПолГодРожденияШаблон</div>
+                </div>
+                <div class="card-row">
+                    <div class="card-row__title"></div>
+                    <div class="card-row__data" id="profession">ПрофессияШаблон</div>
+                </div>                          
             </div>
-        </div>
-    </div>
+            <div class="card-footer">
+                <input type="button" class="card-footer__btn" id="updateData" value="Обновить">
+                <input type="button" class="card-footer__btn" id="clearData" value="Очистить">
+            </div>
+        </section>
+        </main>
+    </body>
     <script src="../js/personGenerator.js"></script>
     <script src="../js/m9_script.js"></script>
-</body>
 </html>

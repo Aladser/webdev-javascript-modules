@@ -1,57 +1,77 @@
-body{margin-top: 10px;}
+@font-face{
+    font-family: 'Gost A';
+    src:url('../resources/GOST\ type\ A\ Standard.ttf');
+}
 
 .card{
+    width: 40%;
+    margin: auto;
     text-align: center;
+    font-family: Gost A;
 }
 
-.card-footer{
-    padding: 18px 0px;
-    border: 1px solid rgb(222, 222, 222);
-    background-color: rgb(247, 247, 247);
+.card-header, .card-footer{
+    border: 1px solid rgb(120, 120, 120);
+    padding: 0.8em 0em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+    font-family: Gost A;
 }
+
 .card-footer__btn{
-    width: 30%;
-    padding: 5px 20px;
-    margin: 0px 5px;
-    border: 1px solid rgb(222, 222, 222);
+    margin: 0px 0.3rem;
+    padding: 0.3rem 0.6rem;
+
+    font-size: 1.5rem;
+    font-family: Gost A;
+    
+    border: 1px solid rgb(120, 120, 120);
     background-color: white;
 }
 .card-footer__btn:hover{
-    color: rgb(222, 222, 222);
+    background-color: rgb(120, 120, 120);
+    color: white;
+    border: white;
+    cursor: pointer;
 }
-.card-footer__btn:active{
-    border: 1px solid black;
-    color: black;
+.card-footer__btn:active{background-color: rgb(220, 220, 220);}
+.card-header, .card-footer__btn{color: rgb(100, 100, 100);}
+
+.card-body{
+    border-right: 1px solid rgb(200, 200, 200);
+    border-left: 1px solid rgb(200,200,200);
+    padding: 1.5rem 0.5rem;
 }
 .card-row{
     display: flex;
-    height: 40px;
+    font-size: 1.6rem;
+    color: rgb(100, 100, 100);
 }
+.card-row__title{
+    width: 30%;
+    height: 50px;
 
-.card-row-title-col{
-    width: 25%;
-}
-.card-row-title-col__title{
-    height: 100%;
-    width: 100%;
     display: flex;
-    justify-content:left;
+    justify-content: flex-start;
     align-items: center;
+
     padding-left: 5px;
 }
-
-.card-row-output{
+.card-row__data{
+    width: 70%;
     display: flex;
     justify-content:center;
     align-items: center;
-    width: 75%;
-    padding-left: 5px;
 }
-.card-row-output__surname{
-    font-size: 30px;
+.card-row__data-surname{
+    font-size: 2.8rem;
     font-weight: bolder;
 }
-.card-row-output__name{
-    font-size: 20px;
+.card-row__data-name{
+    font-size: 2rem;
     font-weight: bolder;
 }
