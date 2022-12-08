@@ -27,12 +27,19 @@ body{margin-top: 10px;}
     display: flex;
     height: 40px;
 }
-.card-row__title{
-    display: flex;
-    align-items: center;
+
+.card-row-title-col{
     width: 25%;
+}
+.card-row-title-col__title{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content:left;
+    align-items: center;
     padding-left: 5px;
 }
+
 .card-row-output{
     display: flex;
     justify-content:center;
